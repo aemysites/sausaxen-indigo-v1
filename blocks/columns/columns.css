@@ -1081,123 +1081,6 @@
 }
 
 
-.columns.columns9 {
-  background: #fff;
-  border-top: 1px solid #eee;
-  border-bottom: 1px solid #eee;
-  padding: 28px 0;
-  max-width: 1200px;
-  margin: 0 auto;
-  box-sizing: border-box;
-}
-.columns.columns9 > div {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: flex-start;
-  gap: 80px;
-  width: 100%;
-  box-sizing: border-box;
-}
-
-@media (max-width: 900px) {
-  .columns.columns9 > div {
-    flex-direction: column;
-    gap: 32px;
-  }
-}
-
-.columns.columns9 > div > div {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  min-width: 0;
-  max-width: 340px;
-  flex: 1 1 0;
-  padding: 0 8px;
-  margin: 0;
-  box-sizing: border-box;
-  text-align: left;
-}
-.columns.columns9 h6,
-.columns.columns9 h6 a {
-  color: #222;
-  font-family: var(--heading-font-family);
-  font-weight: 700;
-  font-size: 16px;
-  margin: 0 0 4px 0;
-  line-height: 1.3;
-  letter-spacing: 0.01em;
-  text-decoration: none;
-  display: flex;
-  align-items: center;
-  min-height: 24px;
-  padding-left: 32px;
-  position: relative;
-}
-.columns.columns9 > div > div:nth-child(1) .button-container {
-  margin: 0 0 4px 0;
-}
-.columns.columns9 > div > div:nth-child(1) .button-container .button {
-  font-size: 13px;
-  color: #6d6d6d;
-  background: none;
-  border: none;
-  box-shadow: none;
-  padding: 0;
-  margin: 0;
-  font-weight: 400;
-  text-align: left;
-  text-decoration: none;
-  cursor: default;
-  line-height: 1.5;
-  border-radius: 0;
-  white-space: normal;
-}
-.columns.columns9 > div > div:nth-child(1) .button-container .button[title="View Number"] {
-  color: #1976d2;
-  text-decoration: underline;
-  background: none;
-  border: none;
-  cursor: pointer;
-  font-weight: 500;
-  margin-top: 2px;
-}
-.columns.columns9 > div > div:nth-child(1) .button-container:last-of-type {
-  display: none;
-}
-.columns.columns9 > div > div:nth-child(2) .button,
-.columns.columns9 > div > div:nth-child(3) .button {
-  color: #6d6d6d;
-  font-family: var(--body-font-family);
-  font-size: 13px;
-  font-weight: 400;
-  background: none;
-  border: none;
-  box-shadow: none;
-  padding: 0;
-  margin: 0 0 4px 0;
-  text-align: left;
-  line-height: 1.6;
-  border-radius: 0;
-  box-sizing: border-box;
-  white-space: normal;
-  max-width: 100%;
-  cursor: default;
-  min-height: 24px;
-  padding-left: 32px;
-  position: relative;
-  word-break: break-word;
-}
-.columns.columns9 > div > div:nth-child(2),
-.columns.columns9 > div > div:nth-child(3) {
-  margin-bottom: 2px;
-}
-.columns.columns9 > div > div > *:not(:last-child) {
-  margin-bottom: 6px;
-}
-
-
 .columns.columns11 {
   position: relative;
   background: #fff;
@@ -1340,8 +1223,6 @@
 .columns.columns19 > div > div:nth-child(n+4) {
   display: none;
 }
-
-/* Headings (first p or h6 in each column) */
 .columns.columns19 > div > div > p:first-child,
 .columns.columns19 > div > div > h6:first-child {
   font-size: 17px;
@@ -1396,4 +1277,201 @@
 
 .columns.columns19 ul:last-child {
   margin-bottom: 0;
+}
+
+
+.columns.columns9 {
+  background: #fff;
+  border-top: 1px solid #eee;
+  border-bottom: 1px solid #eee;
+  padding: 28px 0;
+  max-width: 1200px;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+/* Main row: three horizontal columns */
+.columns.columns9 > div {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 100%;
+  gap: 0;
+  box-sizing: border-box;
+}
+
+/* Responsive: stack columns on mobile */
+@media (max-width: 900px) {
+  .columns.columns9 > div {
+    flex-direction: column;
+    gap: 32px;
+  }
+}
+
+/* Each column: stack icon and content vertically, reduce width and padding for density */
+.columns.columns9 > div > div {
+  flex: 1 1 0;
+  min-width: 0;
+  max-width: 295px;
+  padding: 0 8px;
+  box-sizing: border-box;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
+/* Icon sits above all, left-aligned, very tight to text */
+.columns.columns9 > div > div::before {
+  content: '';
+  display: block;
+  width: 28px;
+  height: 28px;
+  margin-bottom: 2px;
+  background-repeat: no-repeat;
+  background-size: 28px 28px;
+}
+/* Phone icon */
+.columns.columns9 > div > div:nth-child(1)::before {
+  background-image: url('data:image/svg+xml;utf8,<svg fill="none" stroke="%236d6d6d" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M21 16.5v2a2 2 0 01-2.18 2A19.72 19.72 0 013 5.18 2 2 0 015 3h2a2 2 0 012 1.72c.13.98.36 1.94.7 2.86a2 2 0 01-.45 2.11l-1 1a16 16 0 006.29 6.29l1-1a2 2 0 012.11-.45c.92.34 1.88.57 2.86.7A2 2 0 0121 16.5z"/></svg>');
+}
+/* Envelope icon */
+.columns.columns9 > div > div:nth-child(2)::before {
+  background-image: url('data:image/svg+xml;utf8,<svg fill="none" stroke="%236d6d6d" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>');
+}
+/* Chat bubble icon */
+.columns.columns9 > div > div:nth-child(3)::before {
+  background-image: url('data:image/svg+xml;utf8,<svg fill="none" stroke="%236d6d6d" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>');
+}
+
+/* Inner content in each column: stack vertically, no extra margin */
+.columns.columns9 > div > div > * {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+.columns.columns9 > div > div > div,
+.columns.columns9 > div > div > h6,
+.columns.columns9 > div > div > p {
+  display: block;
+  margin-bottom: 0;
+  padding: 0;
+}
+.columns.columns9 > div > div > *:not(:last-child) {
+  margin-bottom: 3px;
+}
+
+/* Call us heading */
+.columns.columns9 h6,
+.columns.columns9 h6 a {
+  font-family: var(--heading-font-family);
+  font-size: 16px;
+  font-weight: 700;
+  color: #222;
+  margin-bottom: 2px;
+  margin-top: 0;
+  line-height: 1.3;
+  letter-spacing: 0.01em;
+  text-decoration: none;
+  padding-left: 0;
+  min-height: 24px;
+  display: block;
+}
+
+/* Call us subtext and link - lighter, smaller, compact */
+.columns.columns9 > div > div:nth-child(1) .button-container .button {
+  font-size: 13px;
+  color: #757575;
+  background: none;
+  border: none;
+  box-shadow: none;
+  padding: 0;
+  margin: 0;
+  font-weight: 400;
+  text-align: left;
+  text-decoration: none;
+  line-height: 1.5;
+  border-radius: 0;
+  box-sizing: border-box;
+  cursor: default;
+  min-height: unset;
+  white-space: normal;
+  max-width: 100%;
+  display: block;
+}
+.columns.columns9 > div > div:nth-child(1) .button-container .button[title="View Number"] {
+  color: #1976d2;
+  text-decoration: underline;
+  font-weight: 500;
+  margin-top: 2px;
+  cursor: pointer;
+  display: block;
+}
+
+/* Hide extra phone numbers row */
+.columns.columns9 > div > div:nth-child(1) .button-container:last-of-type {
+  display: none;
+}
+
+/* Feedback and Chat: visually suppress Markdown hashes if possible */
+.columns.columns9 > div > div:nth-child(2) .button,
+.columns.columns9 > div > div:nth-child(3) .button {
+  font-family: var(--heading-font-family);
+  font-size: 16px;
+  font-weight: 700;
+  color: #222;
+  background: none;
+  border: none;
+  box-shadow: none;
+  padding: 0;
+  margin: 0;
+  text-align: left;
+  line-height: 1.3;
+  border-radius: 0;
+  box-sizing: border-box;
+  white-space: normal;
+  min-height: unset;
+  word-break: break-word;
+  text-decoration: none;
+  display: block;
+  letter-spacing: 0.01em;
+}
+
+/* If subtext uses <br>, make line after less prominent */
+.columns.columns9 > div > div:nth-child(2) .button br + *,
+.columns.columns9 > div > div:nth-child(3) .button br + * {
+  color: #757575;
+  font-weight: 400;
+  font-size: 13px;
+}
+
+/* Help remove left spacing for markdown artifacts */
+.columns.columns9 > div > div:nth-child(2) .button,
+.columns.columns9 > div > div:nth-child(3) .button {
+  padding-left: 0;
+  letter-spacing: 0.01em;
+}
+
+/* Minimize possibility of markdown artifacts standing out */
+.columns.columns9 > div > div:nth-child(2) .button,
+.columns.columns9 > div > div:nth-child(3) .button {
+  /* If possible, hide hashes by color: #fff; but not the heading—without DOM change this is limited */
+}
+
+/* Compact all potential p/button-container spacing */
+.columns.columns9 > div > div .button-container {
+  margin: 0;
+  padding: 0;
+}
+
+@media (max-width: 600px) {
+  .columns.columns9 {
+    padding: 14px 0;
+  }
+  .columns.columns9 > div > div {
+    max-width: 100%;
+    padding: 0 2px;
+  }
 }
