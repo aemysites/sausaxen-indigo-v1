@@ -86,122 +86,142 @@
   padding: 0;
 }
 
-/* Full-width hero, image as background */
+
 .hero.hero2 {
-  width: 100%;
-  max-width: unset;
+  position: relative;
+  width: 100vw;
+  min-width: 0;
+  height: 270px;
   margin: 0;
   padding: 0;
-  position: relative;
-  height: 270px;
-  border-radius: 0;
   overflow: hidden;
-  display: block;
+  background: #000;
+  box-sizing: border-box;
 }
 
-/* Make the image fill and cover the hero area */
+/* Make sure image fills the hero completely, edge-to-edge */
 .hero.hero2 > div:first-child {
   position: absolute;
   inset: 0;
-  width: 100%;
-  height: 100%;
+  width: 100vw;
+  height: 270px;
   z-index: 1;
   pointer-events: none;
 }
 
 .hero.hero2 picture,
-.hero.hero2 picture img {
-  width: 100%;
-  height: 100%;
+.hero.hero2 img {
+  width: 100vw;
+  height: 270px;
+  min-width: 100vw;
+  min-height: 270px;
   object-fit: cover;
   display: block;
 }
 
-/* Overlay: text/button tight to corners, perfectly bottom-aligned */
+/* Overlay for heading and button: align bottom and sides closely */
 .hero.hero2 > div:last-child {
   position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  z-index: 2;
+  inset: 0;
+  width: 100vw;
+  height: 270px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: flex-end;
-  padding: 0 4px 4px;
-  width: 100%;
   pointer-events: none;
+  padding: 0 12px 8px; /* even tighter alignment */
   box-sizing: border-box;
+  z-index: 2;
 }
 
+/* Inner container: flex row */
 .hero.hero2 > div:last-child > div {
+  width: 100%;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: flex-end;
-  width: 100%;
+  pointer-events: auto;
   gap: 0;
+  padding: 0;
+  margin: 0;
+}
+
+/* Heading: big, bold, flush left/bottom, minimal margin */
+.hero.hero2 h2 {
+  font-size: 2.6rem;
+  font-weight: bold;
+  color: #fff;
+  text-shadow: 0 2px 8px rgb(0 0 0 / 50%);
+  margin: 0;
+  padding: 0;
+  line-height: 1;
+  align-self: flex-end;
+  z-index: 3;
+  letter-spacing: 0;
   pointer-events: auto;
 }
 
-.hero.hero2 h2 {
-  margin: 0;
-  padding: 0;
-  color: #fff;
-  font-size: 2rem;
-  font-weight: 700;
-  text-shadow: 0 2px 8px rgb(0 0 0 / 25%);
-  letter-spacing: 0.01em;
-  align-self: flex-end;
-  box-sizing: border-box;
-}
-
+/* Hide extra paragraph if present */
 .hero.hero2 > div:last-child p:not(.button-container) {
   display: none;
 }
 
+/* Book Now button: compact, flush right/bottom */
 .hero.hero2 .button-container {
   margin: 0;
   padding: 0;
   align-self: flex-end;
   display: flex;
-  box-sizing: border-box;
+  pointer-events: auto;
 }
 
 .hero.hero2 .button-container .button {
-  border-radius: 4px;
   background: #fff;
   color: #1976d2;
-  border: 1px solid #ddd;
+  border: 1px solid #1976d2;
+  border-radius: 4px;
   padding: 8px 16px;
-  font-size: 14px;
+  font-size: 1rem;
   font-weight: 500;
-  margin: 0;
   box-shadow: none;
-  transition: background 0.2s, color 0.2s;
-  display: inline-block;
   min-width: 0;
   text-align: center;
   white-space: nowrap;
-  pointer-events: auto;
-  line-height: 1;
+  line-height: 1.2;
+  transition: background 0.2s, color 0.2s;
+  margin: 0;
 }
 
 .hero.hero2 .button-container .button:hover,
 .hero.hero2 .button-container .button:focus {
   background: #1976d2;
   color: #fff;
-  text-decoration: none;
 }
 
-/* Responsive: keep elements tight on small screens */
+/* Responsive: reduce height and padding for small screens */
 @media (width <= 900px) {
-  .hero.hero2 {
+  .hero.hero2,
+  .hero.hero2 > div:first-child,
+  .hero.hero2 > div:last-child {
     height: 150px;
+    min-height: 0;
+    width: 100vw;
+    max-width: 100vw;
+    box-sizing: border-box;
+  }
+
+  .hero.hero2 picture,
+  .hero.hero2 img {
+    height: 150px;
+    min-height: 0;
+    width: 100vw;
+    max-width: 100vw;
   }
 
   .hero.hero2 > div:last-child {
-    padding: 0 2px 2px;
+    padding: 0 6px 4px;
   }
 
   .hero.hero2 h2 {
@@ -209,7 +229,7 @@
   }
 
   .hero.hero2 .button-container .button {
-    padding: 6px 13px;
     font-size: 0.95rem;
+    padding: 6px 13px;
   }
 }
