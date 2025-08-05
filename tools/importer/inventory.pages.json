@@ -1,0 +1,28 @@
+{
+  "templates": [
+    {
+      "name": "'Dashboard Layout'",
+      "cluster": 1,
+      "pages": [
+        {
+          "url": "https://beta-prod-skyplus6e.goindigo.in/mokobara.html",
+          "uuid": "17620547ef3cd52d8fef90b032cfa4003d54e186"
+        },
+        {
+          "url": "https://beta-prod-skyplus6e.goindigo.in/codeshare.html",
+          "uuid": "4cb077507e7e91dae74fd743e51b6594f4da77dc"
+        }
+      ]
+    },
+    {
+      "name": "Dashboard Template",
+      "cluster": 2,
+      "pages": [
+        {
+          "url": "https://beta-prod-skyplus6e.goindigo.in/campaigns/thai-visa.html",
+          "uuid": "9c890b658e93673dfdd2baf7d52da22d38feab5a"
+        }
+      ]
+    }
+  ]
+}

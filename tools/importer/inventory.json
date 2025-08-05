@@ -1,0 +1,705 @@
+{
+  "fragments": [
+    {
+      "name": "nav",
+      "path": "/nav",
+      "totalBoxes": 1,
+      "instances": [
+        {
+          "url": "https://beta-prod-skyplus6e.goindigo.in/mokobara.html",
+          "urlHash": "17620547ef3cd52d8fef90b032cfa4003d54e186",
+          "uuid": "17620547-00-e53df49eed2bea968d172f120c2b0b235d6375dc",
+          "xpath": "/html[1]/body[1]/main[1]/div[1]/div[1]/div[1]/div[2]"
+        },
+        {
+          "url": "https://beta-prod-skyplus6e.goindigo.in/codeshare.html",
+          "urlHash": "4cb077507e7e91dae74fd743e51b6594f4da77dc",
+          "uuid": "4cb07750-00-ab3e4de776b49f538ccb9d433b686862faf5a7cc",
+          "xpath": "/html[1]/body[1]/div[3]"
+        },
+        {
+          "url": "https://beta-prod-skyplus6e.goindigo.in/campaigns/thai-visa.html",
+          "urlHash": "9c890b658e93673dfdd2baf7d52da22d38feab5a",
+          "uuid": "9c890b65-00-38a57b972fda31a8b8a5e59dc8761ce9193d5415",
+          "xpath": "/html[1]/body[1]/div[3]/section[1]/div[1]"
+        }
+      ],
+      "styles": {
+        "height": 67
+      }
+    },
+    {
+      "name": "footer",
+      "path": "/footer",
+      "totalBoxes": 1,
+      "instances": [
+        {
+          "url": "https://beta-prod-skyplus6e.goindigo.in/mokobara.html",
+          "urlHash": "17620547ef3cd52d8fef90b032cfa4003d54e186",
+          "uuid": "17620547-21-830d6a67c5c0178cd18f76140a1b06e8009c19da",
+          "xpath": "/html[1]/body[1]/main[1]/div[1]/div[1]/div[1]/main[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[10]/div[1]/div[1]/div[1]/div[1]/div[1]/footer[1]/div[2]"
+        },
+        {
+          "url": "https://beta-prod-skyplus6e.goindigo.in/codeshare.html",
+          "urlHash": "4cb077507e7e91dae74fd743e51b6594f4da77dc",
+          "uuid": "4cb07750-37-528133280cbd35ebde132266e547057e285b9ebb",
+          "xpath": "/html[1]/body[1]/div[4]/div[5]/div[1]/div[1]/div[2]"
+        },
+        {
+          "url": "https://beta-prod-skyplus6e.goindigo.in/campaigns/thai-visa.html",
+          "urlHash": "9c890b658e93673dfdd2baf7d52da22d38feab5a",
+          "uuid": "9c890b65-11-db9f794353a28fbcb7901996a7f35572f4463e6b",
+          "xpath": "/html[1]/body[1]/div[4]/div[4]/div[1]/div[1]/div[2]"
+        }
+      ],
+      "styles": {}
+    }
+  ],
+  "blocks": [
+    {
+      "name": "Columns",
+      "cluster": 1,
+      "source": "Columns",
+      "target": "Columns (columns1)",
+      "key": "columns1",
+      "instances": [
+        {
+          "url": "https://beta-prod-skyplus6e.goindigo.in/mokobara.html",
+          "urlHash": "17620547ef3cd52d8fef90b032cfa4003d54e186",
+          "uuid": "17620547-13-0e04f6b9e4d6484a69a6d1e213c7e41a032c4411",
+          "xpath": "/html[1]/body[1]/main[1]/div[1]/div[1]/div[1]/main[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[8]/div[1]/div[1]/div[5]/div[1]/div[1]/div[1]/section[1]/div[1]/div[1]",
+          "section": "section-2"
+        },
+        {
+          "url": "https://beta-prod-skyplus6e.goindigo.in/campaigns/thai-visa.html",
+          "urlHash": "9c890b658e93673dfdd2baf7d52da22d38feab5a",
+          "uuid": "9c890b65-04-d4cd8d7cb72843624e3eb7065520dddb1fef27ab",
+          "xpath": "/html[1]/body[1]/div[3]/section[1]/div[5]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/section[1]/div[1]/div[1]",
+          "section": "section-3"
+        }
+      ]
+    },
+    {
+      "name": "Hero",
+      "cluster": 2,
+      "source": "Hero",
+      "target": "Hero (hero2)",
+      "key": "hero2",
+      "instances": [
+        {
+          "url": "https://beta-prod-skyplus6e.goindigo.in/codeshare.html",
+          "urlHash": "4cb077507e7e91dae74fd743e51b6594f4da77dc",
+          "uuid": "4cb07750-03-ccd9e7e46b3e190953e7db95fa713f7166bb90e3",
+          "xpath": "/html[1]/body[1]/div[4]/div[1]/div[1]/div[4]"
+        },
+        {
+          "url": "https://beta-prod-skyplus6e.goindigo.in/codeshare.html",
+          "urlHash": "4cb077507e7e91dae74fd743e51b6594f4da77dc",
+          "uuid": "4cb07750-04-6eb8b335206ddcf0ae33adaffc18aeecfa9cd222",
+          "xpath": "/html[1]/body[1]/div[4]/div[1]/div[1]/div[5]"
+        },
+        {
+          "url": "https://beta-prod-skyplus6e.goindigo.in/codeshare.html",
+          "urlHash": "4cb077507e7e91dae74fd743e51b6594f4da77dc",
+          "uuid": "4cb07750-05-b381fc7717972e91c3f889ff9fa1325c9811cbe6",
+          "xpath": "/html[1]/body[1]/div[4]/div[1]/div[1]/div[6]"
+        },
+        {
+          "url": "https://beta-prod-skyplus6e.goindigo.in/codeshare.html",
+          "urlHash": "4cb077507e7e91dae74fd743e51b6594f4da77dc",
+          "uuid": "4cb07750-06-b6ebfe8afb391f988c7ebbc194ddd7f9adcc00fd",
+          "xpath": "/html[1]/body[1]/div[4]/div[1]/div[1]/div[7]"
+        },
+        {
+          "url": "https://beta-prod-skyplus6e.goindigo.in/codeshare.html",
+          "urlHash": "4cb077507e7e91dae74fd743e51b6594f4da77dc",
+          "uuid": "4cb07750-07-1af017bbb713aecfe0daf05e338e640c8b79eeaf",
+          "xpath": "/html[1]/body[1]/div[4]/div[1]/div[1]/div[8]"
+        },
+        {
+          "url": "https://beta-prod-skyplus6e.goindigo.in/codeshare.html",
+          "urlHash": "4cb077507e7e91dae74fd743e51b6594f4da77dc",
+          "uuid": "4cb07750-08-69105a5272a85f5838a461cd6507a58d4dba17af",
+          "xpath": "/html[1]/body[1]/div[4]/div[1]/div[1]/div[9]"
+        },
+        {
+          "url": "https://beta-prod-skyplus6e.goindigo.in/codeshare.html",
+          "urlHash": "4cb077507e7e91dae74fd743e51b6594f4da77dc",
+          "uuid": "4cb07750-09-b9a8d34cece915c23abd5c4dfd256f4d148cec43",
+          "xpath": "/html[1]/body[1]/div[4]/div[1]/div[1]/div[10]"
+        },
+        {
+          "url": "https://beta-prod-skyplus6e.goindigo.in/codeshare.html",
+          "urlHash": "4cb077507e7e91dae74fd743e51b6594f4da77dc",
+          "uuid": "4cb07750-10-0a01c4bf9b8124ba846e1d34565b18d6d5a825ca",
+          "xpath": "/html[1]/body[1]/div[4]/div[1]/div[1]/div[11]"
+        },
+        {
+          "url": "https://beta-prod-skyplus6e.goindigo.in/codeshare.html",
+          "urlHash": "4cb077507e7e91dae74fd743e51b6594f4da77dc",
+          "uuid": "4cb07750-11-be690febf0d2583a5096bae1b69ace346da9a2e2",
+          "xpath": "/html[1]/body[1]/div[4]/div[1]/div[1]/div[12]"
+        },
+        {
+          "url": "https://beta-prod-skyplus6e.goindigo.in/codeshare.html",
+          "urlHash": "4cb077507e7e91dae74fd743e51b6594f4da77dc",
+          "uuid": "4cb07750-12-11a031781d7f6d91105fe0e8980f2a69a7e8edc2",
+          "xpath": "/html[1]/body[1]/div[4]/div[1]/div[1]/div[13]"
+        },
+        {
+          "url": "https://beta-prod-skyplus6e.goindigo.in/codeshare.html",
+          "urlHash": "4cb077507e7e91dae74fd743e51b6594f4da77dc",
+          "uuid": "4cb07750-13-63c93a3bbb4a99c52126ea249c161c7b0b83cb81",
+          "xpath": "/html[1]/body[1]/div[4]/div[1]/div[1]/div[14]"
+        },
+        {
+          "url": "https://beta-prod-skyplus6e.goindigo.in/codeshare.html",
+          "urlHash": "4cb077507e7e91dae74fd743e51b6594f4da77dc",
+          "uuid": "4cb07750-14-930b53f5313566bb3b92127de6b772dfb0e1f72e",
+          "xpath": "/html[1]/body[1]/div[4]/div[1]/div[1]/div[15]"
+        },
+        {
+          "url": "https://beta-prod-skyplus6e.goindigo.in/codeshare.html",
+          "urlHash": "4cb077507e7e91dae74fd743e51b6594f4da77dc",
+          "uuid": "4cb07750-15-a78c31a8760c317dd49f656b32d2a559f584f94f",
+          "xpath": "/html[1]/body[1]/div[4]/div[1]/div[1]/div[16]"
+        },
+        {
+          "url": "https://beta-prod-skyplus6e.goindigo.in/codeshare.html",
+          "urlHash": "4cb077507e7e91dae74fd743e51b6594f4da77dc",
+          "uuid": "4cb07750-16-ecc12fa8315ddf2ad3477559e952e963cf521137",
+          "xpath": "/html[1]/body[1]/div[4]/div[1]/div[1]/div[17]"
+        },
+        {
+          "url": "https://beta-prod-skyplus6e.goindigo.in/codeshare.html",
+          "urlHash": "4cb077507e7e91dae74fd743e51b6594f4da77dc",
+          "uuid": "4cb07750-17-ebf5631217667f345bd7de35a88ddfa183af8ed7",
+          "xpath": "/html[1]/body[1]/div[4]/div[1]/div[1]/div[18]"
+        },
+        {
+          "url": "https://beta-prod-skyplus6e.goindigo.in/codeshare.html",
+          "urlHash": "4cb077507e7e91dae74fd743e51b6594f4da77dc",
+          "uuid": "4cb07750-18-06f177540145988fdcf11921eee24ac1881ee6e1",
+          "xpath": "/html[1]/body[1]/div[4]/div[1]/div[1]/div[19]"
+        },
+        {
+          "url": "https://beta-prod-skyplus6e.goindigo.in/codeshare.html",
+          "urlHash": "4cb077507e7e91dae74fd743e51b6594f4da77dc",
+          "uuid": "4cb07750-19-8218b0563515070e48da3da28b47253cd7350a6e",
+          "xpath": "/html[1]/body[1]/div[4]/div[1]/div[1]/div[20]"
+        },
+        {
+          "url": "https://beta-prod-skyplus6e.goindigo.in/codeshare.html",
+          "urlHash": "4cb077507e7e91dae74fd743e51b6594f4da77dc",
+          "uuid": "4cb07750-20-95eba54f7a5dc40f24cbb188de1cb7be03e282bb",
+          "xpath": "/html[1]/body[1]/div[4]/div[1]/div[1]/div[21]"
+        },
+        {
+          "url": "https://beta-prod-skyplus6e.goindigo.in/codeshare.html",
+          "urlHash": "4cb077507e7e91dae74fd743e51b6594f4da77dc",
+          "uuid": "4cb07750-21-db5943f8b83e9f930347722d37835260e034d436",
+          "xpath": "/html[1]/body[1]/div[4]/div[1]/div[1]/div[22]"
+        },
+        {
+          "url": "https://beta-prod-skyplus6e.goindigo.in/codeshare.html",
+          "urlHash": "4cb077507e7e91dae74fd743e51b6594f4da77dc",
+          "uuid": "4cb07750-22-2fa1cf71d9639bb3f8c2eb80000edb80e0c295ed",
+          "xpath": "/html[1]/body[1]/div[4]/div[1]/div[1]/div[23]"
+        },
+        {
+          "url": "https://beta-prod-skyplus6e.goindigo.in/codeshare.html",
+          "urlHash": "4cb077507e7e91dae74fd743e51b6594f4da77dc",
+          "uuid": "4cb07750-23-61bc8115510a915602b5638a00ccf3386dd2d06c",
+          "xpath": "/html[1]/body[1]/div[4]/div[1]/div[1]/div[24]"
+        },
+        {
+          "url": "https://beta-prod-skyplus6e.goindigo.in/codeshare.html",
+          "urlHash": "4cb077507e7e91dae74fd743e51b6594f4da77dc",
+          "uuid": "4cb07750-24-b2721e148a13278490344bcdaded56586c7307a1",
+          "xpath": "/html[1]/body[1]/div[4]/div[1]/div[1]/div[25]"
+        },
+        {
+          "url": "https://beta-prod-skyplus6e.goindigo.in/codeshare.html",
+          "urlHash": "4cb077507e7e91dae74fd743e51b6594f4da77dc",
+          "uuid": "4cb07750-25-ec77832616be043a6591b909bc005d8a71e88ac8",
+          "xpath": "/html[1]/body[1]/div[4]/div[1]/div[1]/div[26]"
+        },
+        {
+          "url": "https://beta-prod-skyplus6e.goindigo.in/codeshare.html",
+          "urlHash": "4cb077507e7e91dae74fd743e51b6594f4da77dc",
+          "uuid": "4cb07750-26-951fba531bbbed7bf6bae3889ed08a205ed68a29",
+          "xpath": "/html[1]/body[1]/div[4]/div[1]/div[1]/div[27]"
+        },
+        {
+          "url": "https://beta-prod-skyplus6e.goindigo.in/codeshare.html",
+          "urlHash": "4cb077507e7e91dae74fd743e51b6594f4da77dc",
+          "uuid": "4cb07750-27-e8ade173a4b80954fcdf1f6b81143de5e73a15cd",
+          "xpath": "/html[1]/body[1]/div[4]/div[1]/div[1]/div[28]"
+        },
+        {
+          "url": "https://beta-prod-skyplus6e.goindigo.in/codeshare.html",
+          "urlHash": "4cb077507e7e91dae74fd743e51b6594f4da77dc",
+          "uuid": "4cb07750-28-44bcc2476e8e94f792fe66885b7145f3f6501596",
+          "xpath": "/html[1]/body[1]/div[4]/div[1]/div[1]/div[29]"
+        },
+        {
+          "url": "https://beta-prod-skyplus6e.goindigo.in/codeshare.html",
+          "urlHash": "4cb077507e7e91dae74fd743e51b6594f4da77dc",
+          "uuid": "4cb07750-29-6b25422f97b43437bfba2f9173153e2a19ff5a25",
+          "xpath": "/html[1]/body[1]/div[4]/div[1]/div[1]/div[30]"
+        },
+        {
+          "url": "https://beta-prod-skyplus6e.goindigo.in/codeshare.html",
+          "urlHash": "4cb077507e7e91dae74fd743e51b6594f4da77dc",
+          "uuid": "4cb07750-30-93598881aa763d4bccfbae42f4c319bca74e2141",
+          "xpath": "/html[1]/body[1]/div[4]/div[1]/div[1]/div[31]"
+        },
+        {
+          "url": "https://beta-prod-skyplus6e.goindigo.in/codeshare.html",
+          "urlHash": "4cb077507e7e91dae74fd743e51b6594f4da77dc",
+          "uuid": "4cb07750-31-5083ecc4b23e471e2b619ea8e35d22f77a19ee7e",
+          "xpath": "/html[1]/body[1]/div[4]/div[1]/div[1]/div[32]"
+        },
+        {
+          "url": "https://beta-prod-skyplus6e.goindigo.in/codeshare.html",
+          "urlHash": "4cb077507e7e91dae74fd743e51b6594f4da77dc",
+          "uuid": "4cb07750-32-1c647f3447e88966f7f2fa17dc6a85edd89a4f22",
+          "xpath": "/html[1]/body[1]/div[4]/div[1]/div[1]/div[33]"
+        }
+      ]
+    },
+    {
+      "name": "Embed (video)",
+      "cluster": 3,
+      "source": "Embed",
+      "target": "Embed",
+      "key": "embedVideo3",
+      "instances": [
+        {
+          "url": "https://beta-prod-skyplus6e.goindigo.in/mokobara.html",
+          "urlHash": "17620547ef3cd52d8fef90b032cfa4003d54e186",
+          "uuid": "17620547-17-bdddd8a6eba0bae9ae117ab99b78ca9a171de6d8",
+          "xpath": "/html[1]/body[1]/main[1]/div[1]/div[1]/div[1]/main[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[8]/div[1]/div[1]/div[6]/div[1]/div[1]/div[3]"
+        }
+      ]
+    },
+    {
+      "name": "Columns",
+      "cluster": 4,
+      "source": "Columns",
+      "target": "Columns (columns4)",
+      "key": "columns4",
+      "instances": [
+        {
+          "url": "https://beta-prod-skyplus6e.goindigo.in/mokobara.html",
+          "urlHash": "17620547ef3cd52d8fef90b032cfa4003d54e186",
+          "uuid": "17620547-19-a1e9b4239518546169ea689462c919830ece9911",
+          "xpath": "/html[1]/body[1]/main[1]/div[1]/div[1]/div[1]/main[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[9]"
+        }
+      ]
+    },
+    {
+      "name": "Cards",
+      "cluster": 5,
+      "source": "Cards",
+      "target": "Cards",
+      "key": "cards5",
+      "instances": [
+        {
+          "url": "https://beta-prod-skyplus6e.goindigo.in/mokobara.html",
+          "urlHash": "17620547ef3cd52d8fef90b032cfa4003d54e186",
+          "uuid": "17620547-16-4dfb6cf6b5be8a4eb2acef8d2d96fa1198a0d4fc",
+          "xpath": "/html[1]/body[1]/main[1]/div[1]/div[1]/div[1]/main[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[8]/div[1]/div[1]/div[6]/div[1]/div[1]/div[2]"
+        }
+      ]
+    },
+    {
+      "name": "Columns",
+      "cluster": 6,
+      "source": "Columns",
+      "target": "Columns (columns6)",
+      "key": "columns6",
+      "instances": [
+        {
+          "url": "https://beta-prod-skyplus6e.goindigo.in/mokobara.html",
+          "urlHash": "17620547ef3cd52d8fef90b032cfa4003d54e186",
+          "uuid": "17620547-20-b2354c2bdb08dc8e748a1967d00c313fdfe474ce",
+          "xpath": "/html[1]/body[1]/main[1]/div[1]/div[1]/div[1]/main[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[10]/div[1]/div[1]/div[1]/div[1]/div[1]/footer[1]/div[1]"
+        }
+      ]
+    },
+    {
+      "name": "Columns",
+      "cluster": 7,
+      "source": "Columns",
+      "target": "Columns (columns7)",
+      "key": "columns7",
+      "instances": [
+        {
+          "url": "https://beta-prod-skyplus6e.goindigo.in/mokobara.html",
+          "urlHash": "17620547ef3cd52d8fef90b032cfa4003d54e186",
+          "uuid": "17620547-14-f0276d2711c2a57c1ad6ac11feb109b2abfefee2",
+          "xpath": "/html[1]/body[1]/main[1]/div[1]/div[1]/div[1]/main[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[8]/div[1]/div[1]/div[5]/div[1]/div[1]/div[1]/section[1]/div[1]/div[2]",
+          "section": "section-2"
+        }
+      ]
+    },
+    {
+      "name": "header",
+      "cluster": 8,
+      "source": "Header",
+      "target": "Header (header8)",
+      "key": "header8",
+      "instances": [
+        {
+          "url": "https://beta-prod-skyplus6e.goindigo.in/codeshare.html",
+          "urlHash": "4cb077507e7e91dae74fd743e51b6594f4da77dc",
+          "uuid": "4cb07750-00-ab3e4de776b49f538ccb9d433b686862faf5a7cc",
+          "xpath": "/html[1]/body[1]/div[3]"
+        }
+      ]
+    },
+    {
+      "name": "Columns",
+      "cluster": 9,
+      "source": "Columns",
+      "target": "Columns (columns9)",
+      "key": "columns9",
+      "instances": [
+        {
+          "url": "https://beta-prod-skyplus6e.goindigo.in/codeshare.html",
+          "urlHash": "4cb077507e7e91dae74fd743e51b6594f4da77dc",
+          "uuid": "4cb07750-34-8341da65027e0fd17524b9db04885784294ee0d9",
+          "xpath": "/html[1]/body[1]/div[4]/div[3]"
+        }
+      ]
+    },
+    {
+      "name": "Columns",
+      "cluster": 10,
+      "source": "Columns",
+      "target": "Columns (columns10)",
+      "key": "columns10",
+      "instances": [
+        {
+          "url": "https://beta-prod-skyplus6e.goindigo.in/mokobara.html",
+          "urlHash": "17620547ef3cd52d8fef90b032cfa4003d54e186",
+          "uuid": "17620547-09-340e1487dfa7ee339cd67af34a5e9532f58daa96",
+          "xpath": "/html[1]/body[1]/main[1]/div[1]/div[1]/div[1]/main[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[6]/div[1]/div[1]/div[3]"
+        }
+      ]
+    },
+    {
+      "name": "Columns",
+      "cluster": 11,
+      "source": "Columns",
+      "target": "Columns (columns11)",
+      "key": "columns11",
+      "instances": [
+        {
+          "url": "https://beta-prod-skyplus6e.goindigo.in/codeshare.html",
+          "urlHash": "4cb077507e7e91dae74fd743e51b6594f4da77dc",
+          "uuid": "4cb07750-35-cdf3205d62e137c2072f859d4c874c9eac00bae7",
+          "xpath": "/html[1]/body[1]/div[4]/div[4]"
+        }
+      ]
+    },
+    {
+      "name": "header",
+      "cluster": 12,
+      "source": "Header",
+      "target": "Header (header12)",
+      "key": "header12",
+      "instances": [
+        {
+          "url": "https://beta-prod-skyplus6e.goindigo.in/mokobara.html",
+          "urlHash": "17620547ef3cd52d8fef90b032cfa4003d54e186",
+          "uuid": "17620547-00-e53df49eed2bea968d172f120c2b0b235d6375dc",
+          "xpath": "/html[1]/body[1]/main[1]/div[1]/div[1]/div[1]/div[2]",
+          "section": "section-1"
+        }
+      ]
+    },
+    {
+      "name": "header",
+      "cluster": 13,
+      "source": "Header",
+      "target": "Header (header13)",
+      "key": "header13",
+      "instances": [
+        {
+          "url": "https://beta-prod-skyplus6e.goindigo.in/campaigns/thai-visa.html",
+          "urlHash": "9c890b658e93673dfdd2baf7d52da22d38feab5a",
+          "uuid": "9c890b65-00-38a57b972fda31a8b8a5e59dc8761ce9193d5415",
+          "xpath": "/html[1]/body[1]/div[3]/section[1]/div[1]"
+        }
+      ]
+    },
+    {
+      "name": "Accordion",
+      "cluster": 14,
+      "source": "Accordion",
+      "target": "Accordion (accordion14)",
+      "key": "accordion14",
+      "instances": [
+        {
+          "url": "https://beta-prod-skyplus6e.goindigo.in/codeshare.html",
+          "urlHash": "4cb077507e7e91dae74fd743e51b6594f4da77dc",
+          "uuid": "4cb07750-37-528133280cbd35ebde132266e547057e285b9ebb",
+          "xpath": "/html[1]/body[1]/div[4]/div[5]/div[1]/div[1]/div[2]"
+        }
+      ]
+    },
+    {
+      "name": "Columns",
+      "cluster": 15,
+      "source": "Columns",
+      "target": "Columns (columns15)",
+      "key": "columns15",
+      "instances": [
+        {
+          "url": "https://beta-prod-skyplus6e.goindigo.in/mokobara.html",
+          "urlHash": "17620547ef3cd52d8fef90b032cfa4003d54e186",
+          "uuid": "17620547-05-2b8bae30aa0230adeaeeafae493c2a37a8de395c",
+          "xpath": "/html[1]/body[1]/main[1]/div[1]/div[1]/div[1]/main[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[4]/div[1]/div[1]/div[4]"
+        }
+      ]
+    },
+    {
+      "name": "Columns",
+      "cluster": 16,
+      "source": "Columns",
+      "target": "Columns (columns16)",
+      "key": "columns16",
+      "instances": [
+        {
+          "url": "https://beta-prod-skyplus6e.goindigo.in/campaigns/thai-visa.html",
+          "urlHash": "9c890b658e93673dfdd2baf7d52da22d38feab5a",
+          "uuid": "9c890b65-10-e9503a2974c797a794740321c6fee3098dc44ecd",
+          "xpath": "/html[1]/body[1]/div[4]/div[4]/div[1]/div[1]/footer[1]"
+        }
+      ]
+    },
+    {
+      "name": "Accordion",
+      "cluster": 17,
+      "source": "Accordion",
+      "target": "Accordion (accordion17)",
+      "key": "accordion17",
+      "instances": [
+        {
+          "url": "https://beta-prod-skyplus6e.goindigo.in/campaigns/thai-visa.html",
+          "urlHash": "9c890b658e93673dfdd2baf7d52da22d38feab5a",
+          "uuid": "9c890b65-11-db9f794353a28fbcb7901996a7f35572f4463e6b",
+          "xpath": "/html[1]/body[1]/div[4]/div[4]/div[1]/div[1]/div[2]"
+        }
+      ]
+    },
+    {
+      "name": "Columns",
+      "cluster": 18,
+      "source": "Columns",
+      "target": "Columns (columns18)",
+      "key": "columns18",
+      "instances": [
+        {
+          "url": "https://beta-prod-skyplus6e.goindigo.in/campaigns/thai-visa.html",
+          "urlHash": "9c890b658e93673dfdd2baf7d52da22d38feab5a",
+          "uuid": "9c890b65-05-8d14be48fe22e5b1a7fd217d5f09fc4974d99030",
+          "xpath": "/html[1]/body[1]/div[3]/section[1]/div[5]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/section[1]/div[1]/div[2]",
+          "section": "section-3"
+        }
+      ]
+    },
+    {
+      "name": "Columns",
+      "cluster": 19,
+      "source": "Columns",
+      "target": "Columns (columns19)",
+      "key": "columns19",
+      "instances": [
+        {
+          "url": "https://beta-prod-skyplus6e.goindigo.in/codeshare.html",
+          "urlHash": "4cb077507e7e91dae74fd743e51b6594f4da77dc",
+          "uuid": "4cb07750-36-def99612583d4566d94968d96353931edb45566b",
+          "xpath": "/html[1]/body[1]/div[4]/div[5]/div[1]/div[1]/footer[1]"
+        }
+      ]
+    },
+    {
+      "name": "Hero",
+      "cluster": 20,
+      "source": "Hero",
+      "target": "Hero (hero20)",
+      "key": "hero20",
+      "instances": [
+        {
+          "url": "https://beta-prod-skyplus6e.goindigo.in/campaigns/thai-visa.html",
+          "urlHash": "9c890b658e93673dfdd2baf7d52da22d38feab5a",
+          "uuid": "9c890b65-03-c72edf4265b7d02d2cfb896836d8c897c13adc21",
+          "xpath": "/html[1]/body[1]/div[3]/section[1]/div[4]"
+        }
+      ]
+    },
+    {
+      "name": "Columns",
+      "cluster": 21,
+      "source": "Columns",
+      "target": "Columns (columns21)",
+      "key": "columns21",
+      "instances": [
+        {
+          "url": "https://beta-prod-skyplus6e.goindigo.in/campaigns/thai-visa.html",
+          "urlHash": "9c890b658e93673dfdd2baf7d52da22d38feab5a",
+          "uuid": "9c890b65-09-8341da65027e0fd17524b9db04885784294ee0d9",
+          "xpath": "/html[1]/body[1]/div[4]/div[3]"
+        }
+      ]
+    }
+  ],
+  "outliers": [
+    {
+      "url": "https://beta-prod-skyplus6e.goindigo.in/mokobara.html",
+      "urlHash": "17620547ef3cd52d8fef90b032cfa4003d54e186",
+      "uuid": "17620547-01-e9369c9c4d1abb249d8ff0d9c950ae11cf9db988",
+      "xpath": "/html[1]/body[1]/main[1]/div[1]/div[1]/div[1]/main[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]"
+    },
+    {
+      "url": "https://beta-prod-skyplus6e.goindigo.in/mokobara.html",
+      "urlHash": "17620547ef3cd52d8fef90b032cfa4003d54e186",
+      "uuid": "17620547-02-6e673259ac93572dbd9caab98aa11c4db0b883e5",
+      "xpath": "/html[1]/body[1]/main[1]/div[1]/div[1]/div[1]/main[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]"
+    },
+    {
+      "url": "https://beta-prod-skyplus6e.goindigo.in/mokobara.html",
+      "urlHash": "17620547ef3cd52d8fef90b032cfa4003d54e186",
+      "uuid": "17620547-03-839628ac769644a16ed449ca9d564f8b364ef79d",
+      "xpath": "/html[1]/body[1]/main[1]/div[1]/div[1]/div[1]/main[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[4]/div[1]/div[1]/div[2]"
+    },
+    {
+      "url": "https://beta-prod-skyplus6e.goindigo.in/mokobara.html",
+      "urlHash": "17620547ef3cd52d8fef90b032cfa4003d54e186",
+      "uuid": "17620547-04-f8dd163c774cf7f98c7d462174ba6b9c6ab25001",
+      "xpath": "/html[1]/body[1]/main[1]/div[1]/div[1]/div[1]/main[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[4]/div[1]/div[1]/div[3]"
+    },
+    {
+      "url": "https://beta-prod-skyplus6e.goindigo.in/mokobara.html",
+      "urlHash": "17620547ef3cd52d8fef90b032cfa4003d54e186",
+      "uuid": "17620547-06-52ef14dd0f642b670376334e888e1f9e0187eced",
+      "xpath": "/html[1]/body[1]/main[1]/div[1]/div[1]/div[1]/main[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[5]"
+    },
+    {
+      "url": "https://beta-prod-skyplus6e.goindigo.in/mokobara.html",
+      "urlHash": "17620547ef3cd52d8fef90b032cfa4003d54e186",
+      "uuid": "17620547-07-b7bea5475a69ca2f2e76ea9aa7b3b8b660215707",
+      "xpath": "/html[1]/body[1]/main[1]/div[1]/div[1]/div[1]/main[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[6]/div[1]/div[1]/div[1]"
+    },
+    {
+      "url": "https://beta-prod-skyplus6e.goindigo.in/mokobara.html",
+      "urlHash": "17620547ef3cd52d8fef90b032cfa4003d54e186",
+      "uuid": "17620547-08-9a75dbd5e8084c3d096bdbf3aa721527d0c2dc2b",
+      "xpath": "/html[1]/body[1]/main[1]/div[1]/div[1]/div[1]/main[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[6]/div[1]/div[1]/div[2]"
+    },
+    {
+      "url": "https://beta-prod-skyplus6e.goindigo.in/mokobara.html",
+      "urlHash": "17620547ef3cd52d8fef90b032cfa4003d54e186",
+      "uuid": "17620547-10-8a2463170f1aafd0e9d4c4abcde37f5d5c7a1346",
+      "xpath": "/html[1]/body[1]/main[1]/div[1]/div[1]/div[1]/main[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[7]"
+    },
+    {
+      "url": "https://beta-prod-skyplus6e.goindigo.in/mokobara.html",
+      "urlHash": "17620547ef3cd52d8fef90b032cfa4003d54e186",
+      "uuid": "17620547-11-d52ff65c931b34a02eae847343728c240560b5f3",
+      "xpath": "/html[1]/body[1]/main[1]/div[1]/div[1]/div[1]/main[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[8]/div[1]/div[1]/div[2]"
+    },
+    {
+      "url": "https://beta-prod-skyplus6e.goindigo.in/mokobara.html",
+      "urlHash": "17620547ef3cd52d8fef90b032cfa4003d54e186",
+      "uuid": "17620547-12-b039e6595ff505aafd278498a12f4e5e5977f156",
+      "xpath": "/html[1]/body[1]/main[1]/div[1]/div[1]/div[1]/main[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[8]/div[1]/div[1]/div[4]"
+    },
+    {
+      "url": "https://beta-prod-skyplus6e.goindigo.in/mokobara.html",
+      "urlHash": "17620547ef3cd52d8fef90b032cfa4003d54e186",
+      "uuid": "17620547-15-ee889fc94f30a5d8b262a8b5940288accf5cbf17",
+      "xpath": "/html[1]/body[1]/main[1]/div[1]/div[1]/div[1]/main[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[8]/div[1]/div[1]/div[6]/div[1]/div[1]/div[1]"
+    },
+    {
+      "url": "https://beta-prod-skyplus6e.goindigo.in/mokobara.html",
+      "urlHash": "17620547ef3cd52d8fef90b032cfa4003d54e186",
+      "uuid": "17620547-18-2b42ae7fbd687f524e3a5d69e7a9570dc1b17a78",
+      "xpath": "/html[1]/body[1]/main[1]/div[1]/div[1]/div[1]/main[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[8]/div[1]/div[1]/div[7]"
+    },
+    {
+      "url": "https://beta-prod-skyplus6e.goindigo.in/mokobara.html",
+      "urlHash": "17620547ef3cd52d8fef90b032cfa4003d54e186",
+      "uuid": "17620547-21-830d6a67c5c0178cd18f76140a1b06e8009c19da",
+      "xpath": "/html[1]/body[1]/main[1]/div[1]/div[1]/div[1]/main[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[10]/div[1]/div[1]/div[1]/div[1]/div[1]/footer[1]/div[2]"
+    },
+    {
+      "url": "https://beta-prod-skyplus6e.goindigo.in/codeshare.html",
+      "urlHash": "4cb077507e7e91dae74fd743e51b6594f4da77dc",
+      "uuid": "4cb07750-01-bd0f3cb64b813c40ff632c176a402b1dc719bdf9",
+      "xpath": "/html[1]/body[1]/div[4]/div[1]/div[1]/div[1]"
+    },
+    {
+      "url": "https://beta-prod-skyplus6e.goindigo.in/codeshare.html",
+      "urlHash": "4cb077507e7e91dae74fd743e51b6594f4da77dc",
+      "uuid": "4cb07750-02-e80658c0ea51557018f42aca30c6baaad970c19b",
+      "xpath": "/html[1]/body[1]/div[4]/div[1]/div[1]/div[2]"
+    },
+    {
+      "url": "https://beta-prod-skyplus6e.goindigo.in/codeshare.html",
+      "urlHash": "4cb077507e7e91dae74fd743e51b6594f4da77dc",
+      "uuid": "4cb07750-33-a973990fa063edaf26533ff60889fa14b96debb6",
+      "xpath": "/html[1]/body[1]/div[4]/div[1]/div[1]/div[35]"
+    },
+    {
+      "url": "https://beta-prod-skyplus6e.goindigo.in/campaigns/thai-visa.html",
+      "urlHash": "9c890b658e93673dfdd2baf7d52da22d38feab5a",
+      "uuid": "9c890b65-01-7a6a12c28ff41455baf89756010e5190c1e8bb4a",
+      "xpath": "/html[1]/body[1]/div[3]/section[1]/div[2]"
+    },
+    {
+      "url": "https://beta-prod-skyplus6e.goindigo.in/campaigns/thai-visa.html",
+      "urlHash": "9c890b658e93673dfdd2baf7d52da22d38feab5a",
+      "uuid": "9c890b65-02-4e7b7475190029003a1f393829fdbb23eac499bf",
+      "xpath": "/html[1]/body[1]/div[3]/section[1]/div[3]"
+    },
+    {
+      "url": "https://beta-prod-skyplus6e.goindigo.in/campaigns/thai-visa.html",
+      "urlHash": "9c890b658e93673dfdd2baf7d52da22d38feab5a",
+      "uuid": "9c890b65-06-449ea7736115cc0c10bc41583ba6649459710a7a",
+      "xpath": "/html[1]/body[1]/div[4]/div[1]/div[1]"
+    },
+    {
+      "url": "https://beta-prod-skyplus6e.goindigo.in/campaigns/thai-visa.html",
+      "urlHash": "9c890b658e93673dfdd2baf7d52da22d38feab5a",
+      "uuid": "9c890b65-07-df5212e4edb3f7eda41fcf94a16fe2e66dad0df7",
+      "xpath": "/html[1]/body[1]/div[4]/div[1]/div[2]"
+    },
+    {
+      "url": "https://beta-prod-skyplus6e.goindigo.in/campaigns/thai-visa.html",
+      "urlHash": "9c890b658e93673dfdd2baf7d52da22d38feab5a",
+      "uuid": "9c890b65-08-bfd9bec1de38226b9ff4814326f124642b24fa72",
+      "xpath": "/html[1]/body[1]/div[4]/div[1]/div[3]"
+    }
+  ],
+  "sections": [
+    {
+      "name": "section-1",
+      "background": "rgb(0, 64, 152) none repeat scroll 0% 0% / auto padding-box border-box",
+      "count": 1
+    },
+    {
+      "name": "section-2",
+      "background": "rgb(255, 255, 255) none repeat scroll 0% 0% / auto padding-box border-box",
+      "count": 2
+    },
+    {
+      "name": "section-3",
+      "background": "rgba(0, 0, 0, 0) url(\"\") no-repeat scroll 9px 0% / 99% 97% padding-box border-box",
+      "count": 2
+    }
+  ]
+}
