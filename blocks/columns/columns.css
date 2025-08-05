@@ -1,4 +1,4 @@
-/* Disable no-descending-specificity rule globally */
+/* Disable no-descending-specificity globally */
 /* stylelint-disable no-descending-specificity */
 
 .columns > div {
@@ -160,4 +160,160 @@
     margin-bottom: 20px;
     padding: 0 4vw;
   }
+}
+
+.columns.columns6 {
+  background: #f8f8f8;
+  padding: 32px 40px;
+  box-sizing: border-box;
+  width: 100%;
+}
+
+.columns.columns6 > div {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 56px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.columns.columns6 > div > div {
+  flex: 1 1 0;
+  min-width: 170px;
+  max-width: 260px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.columns.columns6 > div > div:last-child {
+  flex: 0 1 220px;
+  min-width: 170px;
+  max-width: 230px;
+}
+
+@media (width <= 900px) {
+  .columns.columns6 {
+    padding: 24px 12px;
+  }
+
+  .columns.columns6 > div {
+    flex-direction: column;
+    gap: 28px;
+  }
+
+  .columns.columns6 > div > div,
+  .columns.columns6 > div > div:last-child {
+    min-width: unset;
+    max-width: unset;
+    width: 100%;
+  }
+}
+
+.columns.columns6 > div > div > p strong {
+  color: #232323;
+  font-family: var(--heading-font-family);
+  font-weight: 700;
+  font-size: 17px;
+  display: block;
+  margin: 0 0 14px;
+  line-height: 1.25;
+}
+
+.columns.columns6 ul {
+  list-style: none;
+  margin: 0 0 10px;
+  padding-left: 0;
+}
+
+.columns.columns6 li {
+  margin-bottom: 8px;
+  line-height: 1.7;
+}
+
+.columns.columns6 a {
+  color: #adadad;
+  font-size: 15px;
+  font-weight: 400;
+  text-decoration: none;
+  line-height: 1.7;
+  transition: color 0.2s;
+}
+
+.columns.columns6 a:hover,
+.columns.columns6 a:focus {
+  color: #232323;
+  text-decoration: underline;
+}
+
+.columns.columns6 > div > div:last-child > p {
+  margin-top: 16px;
+  margin-bottom: 7px;
+}
+
+.columns.columns6 > div > div:last-child > p:first-child {
+  margin-top: 0;
+}
+
+.columns.columns6 > div > div:last-child ul:empty {
+  margin: 0;
+  padding: 0;
+  height: 0;
+  min-height: 0;
+  display: none;
+}
+
+.columns.columns6 > div > div:last-child ul li picture img,
+.columns.columns6 > div > div:last-child ul li img {
+  max-width: 136px;
+  width: 100%;
+  min-width: 60px;
+  height: auto;
+  display: block;
+  border-radius: 4px;
+  margin-bottom: 10px;
+  margin-right: 0;
+}
+
+.columns.columns6 > div > div:last-child ul:first-of-type {
+  display: flex;
+  flex-flow: row wrap;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+.columns.columns6 > div > div:last-child ul:first-of-type li {
+  margin-bottom: 0;
+  margin-right: 5px;
+}
+
+.columns.columns6 > div > div:last-child ul:first-of-type li a {
+  font-size: 13px;
+  white-space: nowrap;
+  max-width: 110px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.columns.columns6 > div > div > p:first-child {
+  margin-top: 0;
+}
+
+.columns.columns6 > div > div > p + ul {
+  margin-top: 0;
+}
+
+.columns.columns6 > div > div:empty {
+  min-height: 1px;
+}
+
+.columns.columns6 img {
+  max-width: 100%;
+  height: auto;
+  display: block;
 }
