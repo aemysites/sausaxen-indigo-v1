@@ -641,8 +641,6 @@
   width: 100%;
   box-sizing: border-box;
 }
-
-/* Main columns row: no width or flex-basis on children, equal flex, minimal gap */
 .columns.columns10 > div {
   display: flex;
   flex-direction: row;
@@ -668,8 +666,6 @@
     padding-right: 0.5vw;
   }
 }
-
-/* Ensure both cards are equal width and fill the available space */
 .columns.columns10 > div > div {
   flex: 1 1 0;
   min-width: 0;
@@ -683,20 +679,14 @@
   flex-direction: column;
   justify-content: flex-start;
 }
-
-/* Remove left margin on the second card (in case inherited) */
 .columns.columns10 > div > div + div {
   margin-left: 0;
 }
-
-/* Responsive card padding */
 @media (max-width: 900px) {
   .columns.columns10 > div > div {
     padding: 16px 3vw;
   }
 }
-
-/* 2x2 grid in right column: grid fills card, minimal padding */
 .columns.columns10 > div > div:last-child {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -706,8 +696,6 @@
   height: 100%;
   box-sizing: border-box;
 }
-
-/* Mobile: stack grid rows */
 @media (max-width: 900px) {
   .columns.columns10 > div > div:last-child {
     grid-template-columns: 1fr;
@@ -716,8 +704,6 @@
     padding: 4px 0;
   }
 }
-
-/* No extra backgrounds/margins inside grid */
 .columns.columns10 > div > div:last-child > * {
   background: none;
   box-shadow: none;
@@ -725,8 +711,6 @@
   padding: 0;
   margin: 0;
 }
-
-/* Headline styling, compact margin */
 .columns.columns10 h1,
 .columns.columns10 h2 {
   font-family: var(--heading-font-family);
@@ -745,8 +729,6 @@
     margin-bottom: 10px;
   }
 }
-
-/* General content spacing */
 .columns.columns10 p,
 .columns.columns10 span,
 .columns.columns10 label,
@@ -757,8 +739,6 @@
   line-height: 1.5;
   margin-bottom: 5px;
 }
-
-/* Images: full width, slightly rounded */
 .columns.columns10 img {
   width: 100%;
   height: auto;
@@ -768,11 +748,98 @@
   max-width: 100%;
   box-shadow: none;
 }
-
-/* Remove default margin/padding from grid cell elements */
 .columns.columns10 > div > div:last-child p,
 .columns.columns10 > div > div:last-child ul,
 .columns.columns10 > div > div:last-child li {
   margin: 0;
   padding: 0;
+}
+
+
+.columns.columns11 {
+  position: relative;
+  padding: 56px 0 44px 0;
+  background: transparent;
+}
+
+.columns.columns11 > div {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 0;
+  width: 100%;
+  max-width: 100%;
+}
+
+.columns.columns11 > div > div {
+  flex: 1 1 0;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  text-align: center;
+  padding: 0 16px;
+}
+
+.columns.columns11 > div > div p {
+  margin: 0;
+  font-size: 17px;
+  color: #222;
+  font-weight: 500;
+  line-height: 1.7;
+  max-width: 150px; /* allow more natural line breaks */
+  margin-left: auto;
+  margin-right: auto;
+  white-space: pre-line;
+  word-break: break-word;
+  letter-spacing: 0.01em;
+}
+
+/* Responsive adjustments */
+@media (max-width: 899px) {
+  .columns.columns11 {
+    padding: 36px 0 32px 0;
+  }
+  .columns.columns11 > div {
+    flex-wrap: wrap;
+  }
+  .columns.columns11 > div > div {
+    flex: 0 0 50%;
+    max-width: 50%;
+    padding: 0 12px;
+    margin-bottom: 24px;
+  }
+}
+
+@media (max-width: 599px) {
+  .columns.columns11 {
+    padding: 24px 0 24px 0;
+  }
+  .columns.columns11 > div {
+    flex-direction: column;
+  }
+  .columns.columns11 > div > div {
+    flex: 1 1 100%;
+    max-width: 100%;
+    padding: 0 4vw;
+    margin-bottom: 18px;
+  }
+}
+
+/* Decorative bottom border */
+.columns.columns11::after {
+  display: block;
+  position: absolute;
+  left: 2.5%;
+  right: 2.5%;
+  bottom: 0;
+  height: 2px;
+  width: 95%;
+  background: #6ee7e7;
+  border-radius: 1px;
+  pointer-events: none;
+  z-index: 1;
+  content: "";
 }
