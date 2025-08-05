@@ -1,22 +1,21 @@
 /* global WebImporter */
 export default function parse(element, { document }) {
-  // Get all stat elements
-  const statsWrapper = element.querySelector('.stats-wrapper');
-  if (!statsWrapper) return;
-  const row = statsWrapper.querySelector('.row');
-  if (!row) return;
-  const statColumns = Array.from(row.children).filter(child => child.classList.contains('innerwrap-stats'));
-  if (!statColumns.length) return;
+  // Find the row containing the stats
+  const statsRow = element.querySelector('.row');
+  if (!statsRow) return;
 
-  // Per block/table rules, header row is a single cell (1 column),
-  // second row contains all stat columns (so N columns, matching the stat columns count)
+  // Find all stat columns
+  const statItems = Array.from(statsRow.querySelectorAll(':scope > .innerwrap-stats'));
+  if (statItems.length === 0) return;
 
-  // The createTable helper will display the correct table structure, with header spanning N columns
-  // To do this, pass one array of length 1 (header), and one array of length N (content columns)
-  const cells = [
-    ['Columns (columns21)'],
-    statColumns
-  ];
+  // Build table:
+  // Header row: single cell
+  const headerRow = ['Columns (columns21)'];
+  // Second row: all statItems in one row as separate columns
+  const contentRow = statItems;
+
+  // The cells array structure matches the spec: header is single cell, content row is as wide as needed
+  const cells = [headerRow, contentRow];
 
   const table = WebImporter.DOMUtils.createTable(cells, document);
   element.replaceWith(table);

@@ -1,93 +1,85 @@
 /* global WebImporter */
 export default function parse(element, { document }) {
-  // Header row should match exactly
+  // Header row as required
   const headerRow = ['Cards'];
+
+  // Find the slides container robustly
+  let slidesContainer = element.querySelector('.promotional-slide .slick-track');
+  if (!slidesContainer) {
+    const slideArea = element.querySelector('.promotional-slide');
+    if (slideArea) {
+      slidesContainer = slideArea;
+    } else {
+      return;
+    }
+  }
+
+  // Get all slides
+  const slideDivs = slidesContainer.querySelectorAll('.slick-slide');
   const rows = [];
 
-  // Locate the carousel
-  const carousel = element.querySelector('.promotional-slide--carosuel.slick-slider');
-  if (!carousel) return;
+  slideDivs.forEach((slide) => {
+    // For each slide, find the card content
+    const cardCol = slide.querySelector('.promotional-slide--carosuel--item');
+    if (!cardCol) return;
+    const a = cardCol.querySelector('a.promotional-slide--redirection');
+    const img = cardCol.querySelector('img');
+    if (!img || !a) return;
 
-  // Get all slides (cards)
-  const slides = carousel.querySelectorAll('.slick-slide');
-  slides.forEach(slide => {
-    const card = slide.querySelector('.promotional-slide--carosuel--item');
-    if (!card) return;
-    const anchor = card.querySelector('a');
-    const img = card.querySelector('img');
-    const imgCell = img || '';
+    // Extract semantic text content: captions, visible text, headings, etc.
+    // 1. Check for any element with class containing 'caption', 'desc', or 'title' inside cardCol
+    const semanticTextBlocks = cardCol.querySelectorAll('[class*="caption"], [class*="desc"], [class*="title"], figcaption, .caption, .desc, .title');
+    let textElems = [];
+    semanticTextBlocks.forEach(block => {
+      if (block.textContent && block.textContent.trim()) {
+        const p = document.createElement('p');
+        p.textContent = block.textContent.trim();
+        textElems.push(p);
+      }
+    });
 
-    // Build text cell: heading (title/alt), description (caption if found), CTA
-    const textCell = [];
-    let headingText = '';
-    if (img) {
-      headingText = img.getAttribute('title') || img.getAttribute('alt') || '';
-    }
-    if (headingText) {
-      const heading = document.createElement('strong');
-      heading.textContent = headingText;
-      textCell.push(heading, document.createElement('br'));
+    // 2. If still no semantic text, try any <p> or <span> inside cardCol (excluding anchor and img wrappers)
+    if (textElems.length === 0) {
+      const psOrSpans = Array.from(cardCol.querySelectorAll('p, span')).filter(el => !el.closest('a') && !el.querySelector('img'));
+      psOrSpans.forEach(el => {
+        if (el.textContent && el.textContent.trim()) {
+          const p = document.createElement('p');
+          p.textContent = el.textContent.trim();
+          textElems.push(p);
+        }
+      });
     }
 
-    // Try to extract any visible caption/description - check for figcaption, data-caption, aria-label, alt on <a>, or visible text inside anchor
-    let description = '';
-    // 1. Try aria-label or title on anchor
-    if (anchor) {
-      description = anchor.getAttribute('aria-label') || anchor.getAttribute('title') || '';
-    }
-    // 2. Try data-caption anywhere on card
-    if (!description) {
-      const captionData = card.querySelector('[data-caption]');
-      if (captionData) {
-        description = captionData.getAttribute('data-caption');
+    // 3. If still no text, fallback to image alt/title if it's non-generic
+    if (textElems.length === 0) {
+      let alt = img.alt && img.alt.trim() ? img.alt.trim() : '';
+      let title = img.title && img.title.trim() ? img.title.trim() : '';
+      // Only add if not a generic repeated string
+      if (alt && alt.toLowerCase() !== 'indigo 6e') {
+        const p = document.createElement('p');
+        p.textContent = alt;
+        textElems.push(p);
+      } else if (title && title.toLowerCase() !== 'indigo 6e') {
+        const p = document.createElement('p');
+        p.textContent = title;
+        textElems.push(p);
       }
     }
-    // 3. Try figcaption
-    if (!description) {
-      const figcap = card.querySelector('figcaption');
-      if (figcap) description = figcap.textContent.trim();
-    }
-    // 4. Try visible text nodes (not in img or anchor href)
-    if (!description && anchor) {
-      // Sometimes captions are present as text in the anchor (Instagram embed style)
-      const anchorText = Array.from(anchor.childNodes)
-        .filter(n => n.nodeType === Node.TEXT_NODE && n.textContent.trim())
-        .map(n => n.textContent.trim())
-        .join(' ');
-      if (anchorText) description = anchorText;
-    }
-    // 5. Try anything else visible inside card (except anchor/img)
-    if (!description) {
-      const descNodes = Array.from(card.childNodes)
-        .filter(n => n.nodeType === Node.TEXT_NODE && n.textContent.trim());
-      if (descNodes.length) {
-        description = descNodes.map(n => n.textContent.trim()).join(' ');
-      }
-    }
-    // Insert the description if found
-    if (description) {
-      const descP = document.createElement('p');
-      descP.textContent = description;
-      textCell.push(descP);
-    }
 
-    // Add CTA link
-    if (anchor && anchor.href) {
-      textCell.push(document.createElement('br'));
-      const cta = document.createElement('a');
-      cta.href = anchor.href;
-      cta.target = '_blank';
-      cta.textContent = 'View on Instagram';
-      textCell.push(cta);
-    }
+    // Always add the Instagram link
+    const linkElem = document.createElement('a');
+    linkElem.href = a.href;
+    linkElem.target = '_blank';
+    linkElem.textContent = 'View on Instagram';
 
-    rows.push([
-      imgCell,
-      textCell.length ? textCell : ''
-    ]);
+    // Compose the right cell: semantic text (if any) + link
+    const rightCell = [...textElems, linkElem];
+
+    // Add the row
+    rows.push([img, rightCell]);
   });
 
-  const cells = [headerRow, ...rows];
-  const table = WebImporter.DOMUtils.createTable(cells, document);
+  // Compose the table as in the example: header row + rows
+  const table = WebImporter.DOMUtils.createTable([headerRow, ...rows], document);
   element.replaceWith(table);
 }

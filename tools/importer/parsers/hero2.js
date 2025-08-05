@@ -1,52 +1,45 @@
 /* global WebImporter */
 export default function parse(element, { document }) {
-  // Header row, EXACT match
+  // Header: exactly matches the required value
   const headerRow = ['Hero (hero2)'];
 
-  // --- Row 2: Background image (img element) ---
-  // Find the first visible <img> in the element
-  let img = element.querySelector('img');
-  let imgCell = '';
-  if (img) {
-    imgCell = img;
-  }
+  // --- Row 2: Background image element ---
+  // Use the first <img> from the block
+  const bgImg = element.querySelector('img');
 
-  // --- Row 3: Title, subheading, CTA, and all text content ---
-  // We'll gather all visually relevant content into a single array
-  const contentElements = [];
+  // --- Row 3: All relevant text/cta content ---
+  // We'll build up an array of elements to include, always referencing existing elements
+  const contentElems = [];
 
-  // 1. Main headline - look for h2 or h1
-  // Allow for heading to be inside .dest-basic or elsewhere
-  let heading = element.querySelector('.dest-basic h2, h1, h2');
-  if (heading) {
-    contentElements.push(heading);
-  }
+  // Add the title (h2) if present
+  const h2 = element.querySelector('h2');
+  if (h2) contentElems.push(h2);
 
-  // 2. Call-to-action (Book Now button) - a.btn or a.booknow-getins or a with visible text
-  // Only push if it is not already part of contentElements
-  let cta = element.querySelector('a.btn, a.booknow-getins, a.btn-secondary, a[href^="http"], a[data-path]');
-  if (cta && !contentElements.includes(cta) && cta.textContent.trim()) {
-    // If href is "javascript:void(0)" and data-path exists, fix the link
-    if (cta.getAttribute('href') === 'javascript:void(0)' && cta.hasAttribute('data-path')) {
-      cta = cta.cloneNode(true); // reference, but with fixed href
-      cta.setAttribute('href', cta.getAttribute('data-path'));
+  // Add the CTA link (Book Now) if present
+  const cta = element.querySelector('a.btn');
+  if (cta) {
+    // Fix href if data-path is present
+    if (cta.hasAttribute('data-path')) {
+      cta.href = cta.getAttribute('data-path');
     }
-    contentElements.push(cta);
+    contentElems.push(cta);
   }
 
-  // 3. Any text content in paragraphs inside the block (e.g., description, promo)
-  // Only push if not already included
-  // Typical location: .dest-city-info .textblock p
-  let paragraphs = element.querySelectorAll('.dest-city-info .textblock p');
-  paragraphs.forEach(p => {
-    if (!contentElements.includes(p)) contentElements.push(p);
+  // Add any text content from the info/textblock area
+  // Look for all <p> inside .dest-city-info (even if inside .hide, as content may be hidden by CSS only)
+  const infoPs = element.querySelectorAll('.dest-city-info p');
+  infoPs.forEach((p) => {
+    // Only add if not already included
+    if (!contentElems.includes(p)) {
+      contentElems.push(p);
+    }
   });
 
-  // Compose the table rows as specified
+  // Compose the table rows (always 3 rows, 1 column each)
   const rows = [
     headerRow,
-    [imgCell],
-    [contentElements]
+    [bgImg ? bgImg : ''],
+    [contentElems]
   ];
 
   // Create and replace
