@@ -1,42 +1,27 @@
 /* global WebImporter */
 export default function parse(element, { document }) {
-  // Header row exactly as in the example
   const headerRow = ['Embed'];
+  // Gather all immediate child nodes that may contain content
+  const contentNodes = Array.from(element.childNodes).filter((node) => {
+    // Keep element nodes and text nodes with non-empty text
+    return (node.nodeType === Node.ELEMENT_NODE && node.textContent.trim().length > 0) ||
+           (node.nodeType === Node.TEXT_NODE && node.textContent.trim().length > 0);
+  });
 
-  // Flexible content extraction: include all text and HTML from the embed area
-  let contentCell = [];
-  const embedDiv = element.querySelector('.cmp-embed');
-
-  if (embedDiv) {
-    // Get all child nodes: elements and text nodes
-    embedDiv.childNodes.forEach((node) => {
-      if (node.nodeType === Node.ELEMENT_NODE) {
-        contentCell.push(node);
-      } else if (node.nodeType === Node.TEXT_NODE) {
-        const text = node.textContent.trim();
-        if (text) contentCell.push(text);
-      }
-    });
-    // If nothing meaningful inside, fallback to textContent (covers edge case of only text)
-    if (contentCell.length === 0) {
-      const text = embedDiv.textContent && embedDiv.textContent.trim();
-      if (text) contentCell.push(text);
-    }
+  // If the element contains other elements (not empty), preserve all content
+  let contentCell;
+  if (contentNodes.length > 0) {
+    // If multiple, package them as an array for the cell
+    contentCell = contentNodes.length === 1 ? contentNodes[0] : contentNodes;
+  } else {
+    // If truly empty, cell should be empty string
+    contentCell = '';
   }
 
-  // If .cmp-embed had nothing at all, try for any direct text in the main element
-  if (contentCell.length === 0) {
-    const text = element.textContent && element.textContent.trim();
-    if (text) contentCell.push(text);
-  }
-
-  // Ensure at least one cell (empty string if nothing at all)
-  if (contentCell.length === 0) contentCell = [''];
-
-  // The Embed block is always a single-column, two-row table
-  const cells = [headerRow, [contentCell.length > 1 ? contentCell : contentCell[0]]];
+  const cells = [
+    headerRow,
+    [contentCell]
+  ];
   const table = WebImporter.DOMUtils.createTable(cells, document);
-
-  // Replace the original element with our new structured table
   element.replaceWith(table);
 }

@@ -1,57 +1,44 @@
 /* global WebImporter */
 export default function parse(element, { document }) {
-  // Header row exactly as required
+  // Accordion block header row
   const headerRow = ['Accordion (accordion17)'];
   const rows = [headerRow];
 
-  // Find all accordion items
-  const items = element.querySelectorAll('.faq-sb-heading');
-
-  items.forEach((item) => {
-    // Title cell: get the question text from the <a> (excluding the icon)
-    const titleLink = item.querySelector('a.faq-sb-acc-heading');
-    let titleCell;
-    if (titleLink) {
-      // Create a <div> and append all child nodes of the link except the icon
-      const titleDiv = document.createElement('div');
-      Array.from(titleLink.childNodes).forEach(node => {
-        if (!(node.nodeType === 1 && node.tagName === 'I')) {
-          titleDiv.appendChild(node.cloneNode(true));
-        }
-      });
-      // Remove leading/trailing whitespace from text nodes
-      titleDiv.innerHTML = titleDiv.innerHTML.trim();
-      titleCell = titleDiv;
-    } else {
-      // fallback: empty div
-      titleCell = document.createElement('div');
-    }
-
-    // Content cell: get the corresponding .faq-acc-inner-content
-    let contentCell;
-    if (titleLink && titleLink.getAttribute('href') && titleLink.getAttribute('href').startsWith('#')) {
-      const contentId = titleLink.getAttribute('href');
-      const answerDiv = item.querySelector(contentId);
-      if (answerDiv) {
-        // Create a wrapper div and append all nodes (to preserve structure and links)
-        const contentDiv = document.createElement('div');
-        Array.from(answerDiv.childNodes).forEach(node => {
-          if (node.nodeType === 1 || (node.nodeType === 3 && node.textContent.trim() !== '')) {
-            contentDiv.appendChild(node.cloneNode(true));
-          }
-        });
-        contentCell = contentDiv;
-      } else {
-        contentCell = document.createElement('div');
+  // Locate the FAQ accordion group
+  const faqAccGroup = element.querySelector('.faq-sb-acc-group.faq-top-queries');
+  if (faqAccGroup) {
+    // For each accordion heading (one per question)
+    const items = faqAccGroup.querySelectorAll(':scope > .faq-sb-heading');
+    items.forEach((item) => {
+      // Title cell: use the anchor's childNodes except the icon
+      const titleAnchor = item.querySelector(':scope > .faq-sb-acc-heading');
+      let titleContent = [];
+      if (titleAnchor) {
+        // Copy all child nodes except <i> (icon)
+        titleContent = Array.from(titleAnchor.childNodes)
+          .filter(node => !(node.nodeType === Node.ELEMENT_NODE && node.tagName === 'I'));
       }
-    } else {
-      contentCell = document.createElement('div');
-    }
+      if (titleContent.length === 0) {
+        // fallback to textContent
+        const fallback = document.createElement('div');
+        fallback.textContent = titleAnchor ? titleAnchor.textContent.trim() : '';
+        titleContent = [fallback];
+      }
 
-    rows.push([titleCell, contentCell]);
-  });
+      // Content cell: reference the actual .faq-acc-inner-content div's children
+      const contentDiv = item.querySelector('.faq-acc-inner-content');
+      let contentContent = [];
+      if (contentDiv && contentDiv.childNodes.length > 0) {
+        contentContent = Array.from(contentDiv.childNodes);
+      } else {
+        // fallback: empty div
+        contentContent = [document.createElement('div')];
+      }
+      rows.push([titleContent, contentContent]);
+    });
+  }
 
-  // Create and replace with the accordion block table
-  const block = WebImporter.DOMUtils.createTable(rows, document);
-  element.replaceWith(block);
+  // Create and replace with the block table
+  const table = WebImporter.DOMUtils.createTable(rows, document);
+  element.replaceWith(table);
 }

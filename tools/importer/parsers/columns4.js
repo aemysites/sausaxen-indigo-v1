@@ -1,28 +1,24 @@
 /* global WebImporter */
 export default function parse(element, { document }) {
-  // Find the wrapper that contains the stats blocks
-  const wrapper = element.querySelector('.stats-ig-wrapper');
-  if (!wrapper) return;
+  // Find the main stats wrapper
+  const statsWrapper = element.querySelector('.stats-ig-wrapper');
+  if (!statsWrapper) return;
 
-  // Find the row containing the columns
-  const row = wrapper.querySelector('.d-flex');
+  // Find the row with columns
+  const row = statsWrapper.querySelector('.d-flex');
   if (!row) return;
 
-  // Get all columns (flight blocks)
-  const columns = Array.from(row.querySelectorAll('.wrapper-flight-blocks'));
-  if (!columns.length) return;
+  // Select all immediate children blocks (columns)
+  const columns = Array.from(row.querySelectorAll(':scope > .wrapper-flight-blocks'));
+  if (columns.length === 0) return;
 
-  // Create header row as a single cell (fixes the reported bug)
+  // Prepare the header row: one cell only
   const headerRow = ['Columns (columns4)'];
 
-  // Second row: one cell per column content
-  const contentRow = columns;
-  
-  const tableRows = [
-    headerRow,
-    contentRow
-  ];
+  // Prepare the content row: each column is a cell
+  const contentRow = columns.map(col => col);
 
-  const block = WebImporter.DOMUtils.createTable(tableRows, document);
-  element.replaceWith(block);
+  const table = WebImporter.DOMUtils.createTable([headerRow, contentRow], document);
+
+  element.replaceWith(table);
 }

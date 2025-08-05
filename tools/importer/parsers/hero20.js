@@ -1,46 +1,35 @@
 /* global WebImporter */
 export default function parse(element, { document }) {
-  // 1. Find the background image (first real image, not a base64 placeholder)
-  let backgroundImg = null;
-  const imgCandidates = element.querySelectorAll('.bckgrd-tupple img');
-  for (const candidate of imgCandidates) {
-    if (candidate.src && !candidate.src.startsWith('data:')) {
-      backgroundImg = candidate;
-      break;
+  // The block header as per the example
+  const headerRow = ['Hero (hero20)'];
+
+  // Get the image from the banner (visible, not data-uri)
+  let imageEl = null;
+  const bckgrdTupple = element.querySelector('.bckgrd-tupple');
+  if (bckgrdTupple) {
+    // Look for the first <img> with src that is not a data URI
+    const imgs = Array.from(bckgrdTupple.querySelectorAll('img'));
+    imageEl = imgs.find(img => img.src && !img.src.startsWith('data:')) || null;
+  }
+
+  // Get the banner content div
+  let contentCell = '';
+  if (bckgrdTupple) {
+    const bannerContent = bckgrdTupple.querySelector('.banner-content');
+    if (bannerContent) {
+      // If .banner-content has content, use it (even if empty)
+      contentCell = bannerContent;
     }
   }
 
-  // 2. Find the banner content (headline, subheading, CTA, etc)
-  const bannerContent = element.querySelector('.banner-content');
-  let contentCell;
-  if (bannerContent) {
-    // Gather all children that may contain content
-    const contentChildren = Array.from(bannerContent.children).filter(child => {
-      // Keep if not empty
-      return child.textContent.trim() !== '';
-    });
-    if (contentChildren.length > 0) {
-      contentCell = contentChildren;
-    } else {
-      // If .banner-content exists but has no content children, check for any text nodes
-      if (bannerContent.textContent.trim() !== '') {
-        contentCell = [bannerContent.textContent.trim()];
-      } else {
-        contentCell = '';
-      }
-    }
-  } else {
-    contentCell = '';
-  }
-
-  // 3. Build the table
+  // Build the table
   const cells = [
-    ['Hero (hero20)'],
-    [backgroundImg ? backgroundImg : ''],
-    [contentCell]
+    headerRow, // header
+    [imageEl ? imageEl : ''], // row 2: background image or empty if not exists
+    [contentCell], // row 3: content or empty string
   ];
+  const table = WebImporter.DOMUtils.createTable(cells, document);
 
-  // 4. Create block and replace original element
-  const block = WebImporter.DOMUtils.createTable(cells, document);
-  element.replaceWith(block);
+  // Replace the original element with the block table
+  element.replaceWith(table);
 }

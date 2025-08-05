@@ -1,91 +1,61 @@
 /* global WebImporter */
 export default function parse(element, { document }) {
-  // The main columns container is .container__links
-  const columnsContainer = element.querySelector('.container__links');
+  // Helper to extract a column's content: strong title + <ul> links
+  function getAccordionColumnContent(accordion) {
+    const button = accordion.querySelector('button.cmp-accordion__button');
+    // The button contains the title text (might have icons)
+    let title = '';
+    if (button) {
+      // Get text only (ignore <i> icon)
+      title = Array.from(button.childNodes).filter(n => n.nodeType === 3).map(n => n.textContent).join('').trim();
+    }
+    const panel = accordion.querySelector('[data-cmp-hook-accordion="panel"]');
+    let ul = null;
+    if (panel) {
+      ul = panel.querySelector('ul.child-links');
+    }
+    const colContent = [];
+    if (title) {
+      const strong = document.createElement('strong');
+      strong.textContent = title;
+      colContent.push(strong);
+    }
+    if (ul) {
+      colContent.push(ul);
+    }
+    return colContent;
+  }
+
+  // Get all three accordion columns
+  const accordionColumns = element.querySelectorAll('.container__links__item');
   const columns = [];
+  accordionColumns.forEach((accordion) => {
+    const content = getAccordionColumnContent(accordion);
+    columns.push(content);
+  });
 
-  if (columnsContainer) {
-    // Get all the top-level accordion columns (should be 3)
-    const accordionCols = Array.from(columnsContainer.querySelectorAll(':scope > .accordion.container__links__item'));
-    for (const acc of accordionCols) {
-      // Find the visible button label (column title)
-      const btn = acc.querySelector('button.cmp-accordion__button');
-      let heading = '';
-      if (btn && btn.childNodes.length > 0) {
-        // Find text node (ignore any <i> icon)
-        for (const node of btn.childNodes) {
-          if (node.nodeType === Node.TEXT_NODE) {
-            heading = node.textContent.trim();
-            if (heading) break;
-          }
-        }
+  // Fourth column: Social, Download, Our Awards
+  const socialColumn = element.querySelector('.social-links.non-mobile');
+  let socialContent = [];
+  if (socialColumn) {
+    // Only use top-level direct children, retaining structure
+    socialColumn.childNodes.forEach(child => {
+      if (child.nodeType === 1) { // element node
+        socialContent.push(child);
       }
-      // Find the list of links under this column (ul.child-links)
-      const ul = acc.querySelector('ul.child-links');
-      // Build the cell contents
-      const colCell = [];
-      if (heading) {
-        // Use a heading tag for semantic value
-        const h = document.createElement('strong');
-        h.textContent = heading;
-        colCell.push(h);
-        colCell.push(document.createElement('br'));
-      }
-      if (ul) {
-        colCell.push(ul);
-      }
-      columns.push(colCell);
-    }
+    });
   }
+  columns.push(socialContent);
 
-  // The fourth column is the social/download/awards area
-  const socialDiv = element.querySelector('.social-links');
-  const socialCol = [];
-  if (socialDiv) {
-    // Find and group all content under each <h3> section
-    const children = Array.from(socialDiv.children);
-    let currentHeader = null;
-    let buffer = [];
-    for (const child of children) {
-      if (child.tagName === 'H3') {
-        if (currentHeader && buffer.length) {
-          // Output previous group
-          const p = document.createElement('strong');
-          p.textContent = currentHeader.textContent;
-          socialCol.push(p);
-          socialCol.push(document.createElement('br'));
-          socialCol.push(...buffer);
-        }
-        currentHeader = child;
-        buffer = [];
-      } else {
-        buffer.push(child);
-      }
-    }
-    // Push last group
-    if (currentHeader && buffer.length) {
-      const p = document.createElement('strong');
-      p.textContent = currentHeader.textContent;
-      socialCol.push(p);
-      socialCol.push(document.createElement('br'));
-      socialCol.push(...buffer);
-    }
-  }
+  // Header row matches example exactly
+  const headerRow = ['Columns (columns6)'];
+  // Second row (columns): each cell is an array (or element if only one)
+  const secondRow = columns.map(content => content.length === 1 ? content[0] : content);
 
-  // Ensure there are 4 columns, filling with empty if needed
-  while (columns.length < 4) {
-    if (columns.length === 3) {
-      columns.push(socialCol);
-    } else {
-      columns.push([]);
-    }
-  }
+  const table = WebImporter.DOMUtils.createTable([
+    headerRow,
+    secondRow
+  ], document);
 
-  // Create the table
-  const cells = [
-    ['Columns (columns6)'], // header row, matches guideline
-    columns // second row: each column cell (should be 4 total)
-  ];
-  const table = WebImporter.DOMUtils.createTable(cells, document);
   element.replaceWith(table);
 }
