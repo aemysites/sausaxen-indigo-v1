@@ -25,3 +25,141 @@
   aspect-ratio: 4 / 3;
   object-fit: cover;
 }
+
+
+.cards {
+  background: var(--background-color);
+  padding: 0;
+  margin: 0;
+}
+
+/* 1. Horizontal flex row for card list */
+.cards > ul {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  gap: 40px;
+  list-style: none;
+  margin: 0;
+  padding: 0 12px 24px 12px;
+}
+
+/* 2. Card container: portrait, strong shadow, rounded corners, no border */
+.cards > ul > li {
+  flex: 0 0 264px;
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+  border-radius: 18px;
+  box-shadow: 0 10px 32px rgba(60,60,60,0.19);
+  border: none;
+  overflow: hidden;
+  min-width: 220px;
+  max-width: 284px;
+  margin: 0;
+  align-items: stretch;
+  transition: box-shadow 0.18s;
+}
+
+.cards > ul > li:hover {
+  box-shadow: 0 16px 48px rgba(60,60,60,0.22);
+}
+
+/* 3. Card image area: slightly less tall, natural portrait ratio */
+.cards .cards-card-image {
+  width: 100%;
+  aspect-ratio: 5 / 7;
+  min-height: 180px;
+  max-height: 240px;
+  background: #efefef;
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
+  border-top-left-radius: 18px;
+  border-top-right-radius: 18px;
+  overflow: hidden;
+  position: relative;
+}
+
+.cards .cards-card-image picture,
+.cards .cards-card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  border-top-left-radius: 18px;
+  border-top-right-radius: 18px;
+  background: #efefef;
+}
+
+/* 4. Card body: more vertical space, stronger bottom padding, body min-height for balance */
+.cards .cards-card-body {
+  padding: 26px 20px 38px 20px;
+  min-height: 128px;
+  background: #fff;
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-start;
+}
+
+/* 5. Title styling: bold, spacing below */
+.cards .cards-card-body p {
+  margin: 0 0 10px 0;
+  font-size: 16px;
+  color: #222;
+  line-height: 1.6;
+  text-align: left;
+}
+
+.cards .cards-card-body strong {
+  font-weight: 600;
+  font-size: 17px;
+  color: #222;
+  letter-spacing: 0.01em;
+}
+
+/* 6. Link styling: lighter blue, spacing above, left-aligned */
+.cards .cards-card-body a {
+  color: #3797f0;
+  font-weight: 500;
+  text-decoration: underline;
+  font-size: 15px;
+  margin-top: 4px;
+  margin-bottom: 0;
+  display: inline-block;
+  transition: color 0.15s;
+  word-break: break-word;
+  text-align: left;
+  line-height: 1.4;
+}
+
+.cards .cards-card-body a:hover,
+.cards .cards-card-body a:focus {
+  color: #1d3ecf;
+  text-decoration: underline;
+}
+
+/* Responsive: tighter for small screens */
+@media (max-width: 900px) {
+  .cards > ul {
+    gap: 16px;
+    padding: 0 4px 12px 4px;
+  }
+  .cards > ul > li {
+    min-width: 140px;
+    max-width: 85vw;
+    flex-basis: 160px;
+  }
+  .cards .cards-card-image {
+    min-height: 90px;
+    max-height: 170px;
+    aspect-ratio: 5 / 7;
+  }
+  .cards .cards-card-body {
+    padding: 14px 8px 18px 8px;
+    min-height: 60px;
+  }
+}
