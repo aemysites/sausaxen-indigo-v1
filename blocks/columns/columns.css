@@ -956,8 +956,6 @@
     padding: 18px 0 8px 0;
   }
 }
-
-/* --- Typography & Heading styles --- */
 .columns.columns16 > div > div {
   align-self: flex-start;
   width: 100%;
@@ -982,8 +980,6 @@
 .columns.columns16 > div > div > h6 {
   margin-bottom: 6px;
 }
-
-/* --- List styles --- */
 .columns.columns16 ul {
   list-style: none;
   padding: 0;
@@ -1015,16 +1011,12 @@
   color: var(--link-color);
   text-decoration: underline;
 }
-
-/* --- Fourth column: Section alignment and grouping --- */
 .columns.columns16 > div > div:last-child {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   gap: 0;
 }
-
-/* Social row: Make social links look like icon buttons, not text */
 .columns.columns16 > div > div:last-child p {
   display: flex;
   flex-direction: row;
@@ -1052,8 +1044,6 @@
   content: "";
   display: block;
 }
-
-/* WhatsApp badge: override social icon style for image/button look */
 .columns.columns16 > div > div:last-child p a img {
   width: auto;
   height: auto;
@@ -1063,8 +1053,6 @@
   background: none;
   margin: 0;
 }
-
-/* Download and Awards: badges/icons inline and compact */
 .columns.columns16 > div > div:last-child ul {
   display: flex;
   flex-direction: row;
@@ -1089,13 +1077,9 @@
   border-radius: 6px;
   box-shadow: none;
 }
-
-/* Hide empty list items in fourth column */
 .columns.columns16 > div > div:last-child ul li:empty {
   display: none;
 }
-
-/* Responsive tweaks */
 @media (max-width: 700px) {
   .columns.columns16 {
     padding: 0 8px;
@@ -1107,5 +1091,195 @@
 @media (max-width: 500px) {
   .columns.columns16 {
     padding: 0 2vw;
+  }
+}
+
+
+.columns.columns18 {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+/* FLEX LAYOUT for columns: row, perfectly centered vertically */
+.columns.columns18 > div {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  background: transparent;
+  border-radius: 10px;
+  overflow: hidden;
+  min-height: 40px;
+  height: 40px;
+  width: 100%;
+  gap: 0;
+}
+
+/* COLUMN BASE STYLES: minimal, content-driven width, compact padding */
+.columns.columns18 > div > div {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  background: #fff;
+  padding: 0 10px;
+  min-width: 0;
+  height: 40px;
+  border-right: 1px solid #e0e0e0;
+  box-sizing: border-box;
+  font-family: var(--body-font-family);
+  position: relative;
+  gap: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  flex: 0 0 auto;
+}
+
+/* Remove border from last column ("Search Flight" button) */
+.columns.columns18 > div > div:last-child {
+  border-right: none;
+  padding: 0 18px;
+  min-width: 110px;
+}
+
+/* --- FROM/TO COLUMNS: label and value inline, slightly larger label, looser gap --- */
+.columns.columns18 > div > div:nth-child(1),
+.columns.columns18 > div > div:nth-child(2) {
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 8px;
+}
+
+.columns.columns18 > div > div:nth-child(1) p:not(:first-child),
+.columns.columns18 > div > div:nth-child(2) p:not(:first-child) {
+  display: none;
+}
+
+.columns.columns18 > div > div:nth-child(1) p:first-child,
+.columns.columns18 > div > div:nth-child(2) p:first-child {
+  font-size: 12px;
+  color: #888;
+  margin: 0;
+  font-weight: 400;
+  line-height: 1.2;
+  letter-spacing: 0.01em;
+}
+
+.columns.columns18 > div > div:nth-child(1) h2,
+.columns.columns18 > div > div:nth-child(2) h2 {
+  margin: 0;
+  font-size: 13px;
+  font-weight: 600;
+  color: #222;
+  line-height: 1.2;
+  font-family: var(--body-font-family);
+  letter-spacing: 0.01em;
+}
+
+/* --- TRAVEL DATES COLUMN: all inline, looser spacing, bold date, subtle dash, helper text --- */
+.columns.columns18 > div > div:nth-child(3) {
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 10px;
+  min-width: 0;
+  padding: 0 10px;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.columns.columns18 > div > div:nth-child(3) p {
+  margin: 0 2px 0 0;
+  font-size: 12px;
+  color: #888;
+  font-weight: 400;
+  display: inline-block;
+  vertical-align: middle;
+  line-height: 1.2;
+  white-space: nowrap;
+}
+
+.columns.columns18 > div > div:nth-child(3) p:nth-child(2) {
+  font-size: 13px;
+  color: #222;
+  font-weight: 700;
+  margin-right: 10px;
+}
+
+.columns.columns18 > div > div:nth-child(3) p:nth-child(3) {
+  font-size: 13px;
+  color: #bbb;
+  font-weight: 400;
+  margin-right: 8px;
+}
+
+.columns.columns18 > div > div:nth-child(3) p:last-child {
+  color: #bbb;
+  font-weight: 400;
+  margin-right: 0;
+}
+
+/* --- SEARCH BUTTON COLUMN --- */
+.columns.columns18 > div > div:nth-child(4) {
+  background: #002ea1;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0 10px 10px 0;
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background 0.2s;
+  height: 40px;
+  padding: 0 24px;
+  min-width: 0;
+  white-space: nowrap;
+  flex: 0 0 auto;
+}
+.columns.columns18 > div > div:nth-child(4) p {
+  margin: 0;
+  color: #fff;
+  width: 100%;
+  text-align: center;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  font-size: 14px;
+  white-space: nowrap;
+  line-height: 1.2;
+}
+
+/* Prevent h2 tags inside columns from inheriting global large heading styles */
+.columns.columns18 h2 {
+  margin: 0;
+  font-family: var(--body-font-family);
+  font-size: 13px;
+  font-weight: 600;
+  color: #222;
+  line-height: 1.2;
+  letter-spacing: 0.01em;
+}
+
+/* --- RESPONSIVE: Stack vertically on mobile --- */
+@media (max-width: 700px) {
+  .columns.columns18 > div {
+    flex-direction: column;
+    height: unset;
+    align-items: stretch;
+  }
+  .columns.columns18 > div > div {
+    border-right: none;
+    border-bottom: 1px solid #e0e0e0;
+    border-radius: 0;
+    min-width: 0;
+    width: 100%;
+    padding: 8px 10px;
+    height: unset;
+    justify-content: flex-start;
+  }
+  .columns.columns18 > div > div:last-child {
+    border-bottom: none;
+    border-radius: 0 0 10px 10px;
+    padding: 0 24px;
   }
 }
