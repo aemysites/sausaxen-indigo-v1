@@ -31,3 +31,61 @@
     order: unset;
   }
 }
+
+
+.columns.columns1 > div {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 8px;        /* Add horizontal gap to separate items cleanly */
+  width: fit-content;
+  min-width: 0;
+  padding: 2px 0;  /* Small vertical padding for comfort */
+}
+
+.columns.columns1 > div > div {
+  /* Remove inner flex to avoid collapsing the outer gap */
+  display: block;
+  padding: 0;
+  margin: 0;
+  min-width: 0;
+}
+
+.columns.columns1 > div > div > p {
+  font-size: 12px;
+  font-family: var(--body-font-family), Arial, sans-serif;
+  color: #222;
+  font-weight: 400;
+  line-height: 1.2;
+  margin: 0;
+  padding: 0;
+  background: none;
+  border: none;
+  white-space: nowrap;      /* Prevents label wrapping */
+  overflow: visible;
+  display: inline;          /* Inline for tight, baseline alignment */
+  vertical-align: middle;   /* Ensure vertical alignment */
+}
+
+/* Hide all but the first <p> in the right column */
+.columns.columns1 > div > div:nth-child(2) > p:not(:first-child) {
+  display: none;
+}
+
+/* Prevent links from appearing blue or underlined in this context */
+.columns.columns1 a {
+  color: #222;
+  text-decoration: none;
+  pointer-events: none;
+  cursor: default;
+}
+
+/* Responsive: stack items vertically on very small screens */
+@media (width <= 500px) {
+  .columns.columns1 > div {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+    padding: 0;
+  }
+}
