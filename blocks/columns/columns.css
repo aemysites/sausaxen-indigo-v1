@@ -857,8 +857,6 @@
   max-width: 820px;
   margin: 0 auto;
 }
-
-/* Left column: image should fill height and align with cards */
 .columns.columns15 > div > div:nth-child(1) {
   flex: 1.15 1 0;
   min-width: 0;
@@ -880,8 +878,6 @@
   border-radius: 6px;
   object-fit: cover;
 }
-
-/* Card columns: compact, minimal, align to image height */
 .columns.columns15 > div > div:nth-child(2),
 .columns.columns15 > div > div:nth-child(3) {
   flex: 1 1 0;
@@ -898,21 +894,15 @@
   box-sizing: border-box;
   height: 100%;
 }
-
-/* Card text/image alignment and spacing */
 .columns.columns15 > div > div:nth-child(2) p,
 .columns.columns15 > div > div:nth-child(3) p {
   margin: 0 0 6px 0;
   text-align: center;
   line-height: 1.12;
 }
-
-/* Remove extra space between any repeated blocks */
 .columns.columns15 > div + div {
   margin-top: 0;
 }
-
-/* Responsive: stack columns vertically on small screens */
 @media (max-width: 900px) {
   .columns.columns15 > div {
     flex-direction: column;
@@ -933,5 +923,189 @@
   .columns.columns15 > div > div:nth-child(1) {
     max-width: 100%;
     border-radius: 5px;
+  }
+}
+
+
+.columns.columns16 {
+  background: #fff;
+  padding: 0 32px;
+  border-top: 1px solid #eaeaea;
+}
+
+.columns.columns16 > div {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr 1fr 1.4fr;
+  gap: 44px;
+  max-width: 1200px;
+  margin: 0 auto;
+  align-items: start;
+  padding: 38px 0 18px 0;
+}
+
+@media (max-width: 1100px) {
+  .columns.columns16 > div {
+    grid-template-columns: 1fr 1fr;
+    gap: 32px 24px;
+  }
+}
+@media (max-width: 700px) {
+  .columns.columns16 > div {
+    grid-template-columns: 1fr;
+    gap: 18px;
+    padding: 18px 0 8px 0;
+  }
+}
+
+/* --- Typography & Heading styles --- */
+.columns.columns16 > div > div {
+  align-self: flex-start;
+  width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
+}
+
+.columns.columns16 > div > div > p,
+.columns.columns16 > div > div > h6 {
+  color: #222;
+  font-family: var(--heading-font-family);
+  font-size: 16px;
+  font-weight: 700;
+  margin: 0 0 12px 0;
+  letter-spacing: 0.01em;
+  line-height: 1.1;
+}
+
+.columns.columns16 > div > div > h6:not(:first-child) {
+  margin-top: 28px;
+}
+.columns.columns16 > div > div > h6 {
+  margin-bottom: 6px;
+}
+
+/* --- List styles --- */
+.columns.columns16 ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 10px 0;
+}
+
+.columns.columns16 li {
+  margin: 0 0 6px 0;
+  font-size: 14px;
+  color: #444;
+  line-height: 1.6;
+}
+.columns.columns16 li:last-child {
+  margin-bottom: 0;
+}
+
+.columns.columns16 li a,
+.columns.columns16 > div > div:last-child p a,
+.columns.columns16 > div > div:last-child ul a {
+  color: #444;
+  text-decoration: none;
+  transition: color 0.18s;
+  font-size: 14px;
+  line-height: 1.6;
+}
+.columns.columns16 li a:hover,
+.columns.columns16 > div > div:last-child p a:hover,
+.columns.columns16 > div > div:last-child ul a:hover {
+  color: var(--link-color);
+  text-decoration: underline;
+}
+
+/* --- Fourth column: Section alignment and grouping --- */
+.columns.columns16 > div > div:last-child {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0;
+}
+
+/* Social row: Make social links look like icon buttons, not text */
+.columns.columns16 > div > div:last-child p {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin: 0 0 12px 0;
+}
+.columns.columns16 > div > div:last-child p a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  background: #eaeaea;
+  border-radius: 50%;
+  margin: 0;
+  font-size: 0;
+  overflow: hidden;
+  vertical-align: middle;
+  padding: 0;
+  border: none;
+  box-shadow: none;
+}
+.columns.columns16 > div > div:last-child p a::after {
+  content: "";
+  display: block;
+}
+
+/* WhatsApp badge: override social icon style for image/button look */
+.columns.columns16 > div > div:last-child p a img {
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  max-height: 36px;
+  border-radius: 5px;
+  background: none;
+  margin: 0;
+}
+
+/* Download and Awards: badges/icons inline and compact */
+.columns.columns16 > div > div:last-child ul {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px 24px;
+  margin-bottom: 0;
+}
+.columns.columns16 > div > div:last-child ul li {
+  margin: 0;
+  padding: 0;
+  display: inline-flex;
+  align-items: center;
+}
+
+.columns.columns16 > div > div:last-child img {
+  max-width: 110px;
+  height: auto;
+  vertical-align: middle;
+  margin: 0 8px 4px 0;
+  display: inline-block;
+  border-radius: 6px;
+  box-shadow: none;
+}
+
+/* Hide empty list items in fourth column */
+.columns.columns16 > div > div:last-child ul li:empty {
+  display: none;
+}
+
+/* Responsive tweaks */
+@media (max-width: 700px) {
+  .columns.columns16 {
+    padding: 0 8px;
+  }
+  .columns.columns16 > div > div:last-child img {
+    max-width: 90px;
+  }
+}
+@media (max-width: 500px) {
+  .columns.columns16 {
+    padding: 0 2vw;
   }
 }
