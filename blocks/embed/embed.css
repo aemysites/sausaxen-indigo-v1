@@ -1,8 +1,21 @@
+/* Fixing validation errors */
+
 .embed {
   width: unset;
   text-align: center;
   max-width: 800px;
   margin: 32px auto;
+  background-color: #e7e6e8;
+
+  /* remove inherited margin/padding/max-width from parent containers */
+  margin-left: calc(-1 * (100vw - 100%) / 2);
+  margin-right: calc(-1 * (100vw - 100%) / 2);
+  width: 100vw;
+  max-width: 100vw;
+  min-height: 100px;
+  box-sizing: border-box;
+  padding: 0;
+  border: none;
 }
 
 .embed > div {
