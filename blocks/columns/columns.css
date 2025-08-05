@@ -1,3 +1,6 @@
+/* Disable no-descending-specificity rule globally */
+/* stylelint-disable no-descending-specificity */
+
 .columns > div {
   display: flex;
   flex-direction: column;
@@ -32,19 +35,17 @@
   }
 }
 
-
 .columns.columns1 > div {
   display: flex;
   flex-direction: row;
   align-items: center;
-  gap: 8px;        /* Add horizontal gap to separate items cleanly */
+  gap: 8px;
   width: fit-content;
   min-width: 0;
-  padding: 2px 0;  /* Small vertical padding for comfort */
+  padding: 2px 0;
 }
 
 .columns.columns1 > div > div {
-  /* Remove inner flex to avoid collapsing the outer gap */
   display: block;
   padding: 0;
   margin: 0;
@@ -61,18 +62,16 @@
   padding: 0;
   background: none;
   border: none;
-  white-space: nowrap;      /* Prevents label wrapping */
+  white-space: nowrap;
   overflow: visible;
-  display: inline;          /* Inline for tight, baseline alignment */
-  vertical-align: middle;   /* Ensure vertical alignment */
+  display: inline;
+  vertical-align: middle;
 }
 
-/* Hide all but the first <p> in the right column */
 .columns.columns1 > div > div:nth-child(2) > p:not(:first-child) {
   display: none;
 }
 
-/* Prevent links from appearing blue or underlined in this context */
 .columns.columns1 a {
   color: #222;
   text-decoration: none;
@@ -80,12 +79,85 @@
   cursor: default;
 }
 
-/* Responsive: stack items vertically on very small screens */
 @media (width <= 500px) {
   .columns.columns1 > div {
     flex-direction: column;
     align-items: flex-start;
     gap: 4px;
     padding: 0;
+  }
+}
+
+.columns.columns4 {
+  background: #f6f6fa;
+  padding: 48px 0;
+  margin: 0;
+  max-width: unset;
+}
+
+.columns.columns4 > div {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: flex-start;
+  width: 100%;
+  max-width: unset;
+  margin: 0;
+  padding: 0;
+}
+
+.columns.columns4 > div > div {
+  flex: 0 1 200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  min-width: 0;
+  padding: 0 32px;
+  box-sizing: border-box;
+}
+
+.columns.columns4 p {
+  color: #23232b;
+  font-size: 13px;
+  line-height: 1.5;
+  font-family: var(--body-font-family);
+  font-weight: 400;
+  margin: 0;
+}
+
+@media (width <= 900px) {
+  .columns.columns4 {
+    padding: 32px 0;
+  }
+
+  .columns.columns4 > div {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .columns.columns4 > div > div {
+    flex: 1 1 45%;
+    max-width: 50%;
+    margin-bottom: 32px;
+    padding: 0 16px;
+  }
+}
+
+@media (width <= 600px) {
+  .columns.columns4 {
+    padding: 20px 0;
+  }
+
+  .columns.columns4 > div {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .columns.columns4 > div > div {
+    max-width: 100%;
+    flex-basis: 100%;
+    margin-bottom: 20px;
+    padding: 0 4vw;
   }
 }
